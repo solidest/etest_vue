@@ -48,9 +48,16 @@ const _store = new  Vuex.Store({
       state.syslogs.push(log);
     },
     updateRecord: function(state, rcds) {
+      let _rcds = state.records;
       for(let r of rcds) {
-        state.records.push(r);
+        _rcds.push(r);
       }
+      // let rmc = _rcds.length-5000;  //最多保留5000条记录
+      // if(rmc>0) {
+      //   while (rmc-- > 0) {
+      //     _rcds.shift();
+      //   }
+      // }
     },
     cmdRun: function(state, run_info) {
       state.syslogs = [];
