@@ -15,7 +15,7 @@ const _store = new  Vuex.Store({
       run_state: 'idle',
       run_uuid: null,
       run_prog_id: null,
-      run_ui_id: null
+      run_panel_id: null
     },
     syslogs: [],
     records: [],
@@ -52,17 +52,17 @@ const _store = new  Vuex.Store({
       for(let r of rcds) {
         _rcds.push(r);
       }
-      // let rmc = _rcds.length-5000;  //最多保留5000条记录
-      // if(rmc>0) {
-      //   while (rmc-- > 0) {
-      //     _rcds.shift();
-      //   }
-      // }
+      let rmc = _rcds.length-5000;  //最多保留5000条记录
+      if(rmc>0) {
+        while (rmc-- > 0) {
+          _rcds.shift();
+        }
+      }
     },
     cmdRun: function(state, run_info) {
       state.syslogs = [];
       state.records = [];
-      state.work.run_ui_id = run_info.ui_id;
+      state.work.run_panel_id = run_info.ui_id;
       state.work.run_id = run_info.run_id;
       ipcRenderer.send('cmd-run', run_info.run_id);
     },
