@@ -3,7 +3,9 @@
 import {
   app,
   protocol,
-  BrowserWindow
+  BrowserWindow,
+  globalShortcut,
+  Menu,
 } from 'electron'
 import {
   createProtocol,
@@ -25,12 +27,13 @@ protocol.registerStandardSchemes(['app'], {
 function createWindow() {
   // Create the browser window.
   win = new BrowserWindow({
-    width: 1024,
-    height: 768,
     webPreferences: {
       nodeIntegration: true
     },
-    show: false
+    fullscreen: true,
+    simpleFullscreen: true,
+    show: false,
+    frame: false,
   })
 
   if (process.env.WEBPACK_DEV_SERVER_URL) {
@@ -44,8 +47,18 @@ function createWindow() {
   }
 
   win.once('ready-to-show', () => {
-      win.show();
-      sdk.setup(win);
+    globalShortcut.register('CommandOrControl+Q', () => {
+        app.quit();
+    });
+    globalShortcut.register('CommandOrControl+Alt+I', () => {
+      win.webContents.isDevToolsOpened() ? win.webContents.closeDevTools() : win.webContents.openDevTools()
+    });
+    globalShortcut.register('CommandOrControl+R', () => {
+      win.webContents.reload();
+    });
+    Menu.setApplicationMenu(null);
+    win.show();
+    sdk.setup(win);
   });
 
   win.on('closed', () => {
