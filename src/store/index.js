@@ -78,7 +78,7 @@ const _store = new  Vuex.Store({
 
 //更新执行机状态
 ipcRenderer.on('sys-state', (_, work_state, run_uuid) => {
-  _store.commit('udpateWorkState', {run_state: work_state, run_uuid: run_uuid});
+  _store.commit('updateWorkState', {run_state: work_state, run_uuid: run_uuid});
 });
 
 //系统错误信息
