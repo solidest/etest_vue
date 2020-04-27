@@ -1,24 +1,36 @@
 'use strict'
 
-import { app, protocol, BrowserWindow } from 'electron'
+import {
+  app,
+  protocol,
+  BrowserWindow
+} from 'electron'
 import {
   createProtocol,
   //installVueDevtools
 } from 'vue-cli-plugin-electron-builder/lib'
 const isDevelopment = process.env.NODE_ENV !== 'production'
 
+const sdk = require('./sdk_mocker');
+
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 let win
 
 // Scheme must be registered before the app is ready
-protocol.registerStandardSchemes(['app'], { secure: true })
+protocol.registerStandardSchemes(['app'], {
+  secure: true
+})
 
-function createWindow () {
+function createWindow() {
   // Create the browser window.
-  win = new BrowserWindow({ width: 800, height: 600, webPreferences: {
-    nodeIntegration: true
-  } })
+  win = new BrowserWindow({
+    width: 800,
+    height: 600,
+    webPreferences: {
+      nodeIntegration: true
+    }
+  })
 
   if (process.env.WEBPACK_DEV_SERVER_URL) {
     // Load the url of the dev server if in development mode
@@ -29,6 +41,10 @@ function createWindow () {
     // Load the index.html when not in development
     win.loadURL('app://./index.html')
   }
+
+  win.on('ready', () => {
+    sdk.setup(win);
+  })
 
   win.on('closed', () => {
     win = null
@@ -59,10 +75,10 @@ app.on('ready', async () => {
   if (isDevelopment && !process.env.IS_TEST) {
     // Install Vue Devtools
     try {
-  //await installVueDevtools()
-} catch (e) {
-  console.error('Vue Devtools failed to install:', e.toString())
-}
+      //await installVueDevtools()
+    } catch (e) {
+      console.error('Vue Devtools failed to install:', e.toString())
+    }
 
   }
   createWindow()
