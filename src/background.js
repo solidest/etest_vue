@@ -25,11 +25,12 @@ protocol.registerStandardSchemes(['app'], {
 function createWindow() {
   // Create the browser window.
   win = new BrowserWindow({
-    width: 800,
-    height: 600,
+    width: 1024,
+    height: 768,
     webPreferences: {
       nodeIntegration: true
-    }
+    },
+    show: false
   })
 
   if (process.env.WEBPACK_DEV_SERVER_URL) {
@@ -42,13 +43,14 @@ function createWindow() {
     win.loadURL('app://./index.html')
   }
 
-  win.on('ready', () => {
-    sdk.setup(win);
-  })
+  win.once('ready-to-show', () => {
+      win.show();
+      sdk.setup(win);
+  });
 
   win.on('closed', () => {
     win = null
-  })
+  });
 }
 
 // Quit when all windows are closed.
