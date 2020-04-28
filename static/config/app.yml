@@ -18,6 +18,7 @@ tabs:
   id: runcase
   icon: mdi-play-box-outline
   readme: 用例执行组件：包含执行控制按钮、执行输出两个独立的组件
+  router: Runsingle
 - title: 实时监视
   id: watcher
   icon: mdi-chart-bell-curve

@@ -17,7 +17,7 @@
       </v-tabs>
       <v-spacer />
 
-      <v-btn icon @click="onClose">
+      <v-btn icon @click="onClose" class="mr-2">
         <v-icon>mdi-close</v-icon>
       </v-btn>
     </v-app-bar>
@@ -103,7 +103,10 @@
           });
           this.$store.commit('cmdOpen', 'https://solidest.github.io/etest_sdk/#/');
         } else {
-          let rt = this.tab.router || 'About';
+          let rt = this.tab.router;
+          if(!rt) {
+            return;
+          }
           this.$router.push({
             name: rt
           });

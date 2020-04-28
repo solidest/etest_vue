@@ -22,7 +22,12 @@ Vue.use(VueRouter)
     path: '/lists',
     name: 'Lists',
     component: () => import(/* webpackChunkName: "lists" */ '../views/Lists.vue')
-  }
+  },
+  {
+    path: '/runsingle',
+    name: 'Runsingle',
+    component: () => import(/* webpackChunkName: "runsingle" */ '../views/RunSingle.vue')
+  },
 ]
 
 const router = new VueRouter({
