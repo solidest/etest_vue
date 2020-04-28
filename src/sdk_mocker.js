@@ -106,7 +106,7 @@ function _start_tick() {
 
 //初始化数据库
 function _loaddb(run_id) {
-    let fdb = './logdb/' + run_id + '.json';
+    let fdb = '/static/logdb/' + run_id + '.json';
     if(!fs.existsSync(fdb)) {
         send_sys_err('没有找到run_id:' + run_id);
         return null;

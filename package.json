@@ -15,6 +15,7 @@
   "dependencies": {
     "@mdi/font": "^5.1.45",
     "core-js": "^3.6.4",
+    "js-yaml": "^3.13.1",
     "lokijs": "^1.5.8",
     "shortid": "^2.2.15",
     "vue": "^2.6.11",

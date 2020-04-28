@@ -1,6 +1,8 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import {ipcRenderer} from 'electron'
+import {ipcRenderer, remote, shell} from 'electron'
+const fs = require('fs');
+import yaml from 'js-yaml';
 
 Vue.use(Vuex);
 
@@ -69,6 +71,18 @@ const _store = new  Vuex.Store({
     cmdStop: function() {
       ipcRenderer.send('cmd-stop');
     },
+    cmdExit: function() {
+      remote.app.quit();
+    },
+    cmdOpen: function(_, url) {
+      shell.openExternal(url);
+    },
+  },
+  getters: {
+    getConfig: () => (id) => {
+      let f = 'static/config/' + id + '.yml';
+      return yaml.safeLoad(fs.readFileSync(f, 'utf8'));
+    }
   },
   actions: {
   },

@@ -1,18 +1,26 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+  <v-container fluid fill-height>
+    <v-card flat width="100%">
+      <img alt="ETestDev" src="../assets/logo.svg">
+      <v-card-text v-for="(memo, index) in cfg.memos" :key="index">
+        {{memo}}
+      </v-card-text>
+    </v-card>
+  </v-container>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+  export default {
+    name: 'home',
+    created: function () {
+      this.cfg = this.$store.getters.getConfig('home');
+    },
 
-export default {
-  name: 'Home',
-  components: {
-    HelloWorld
+    data: () => {
+      return {
+        cfg: null
+      }
+    }
+
   }
-}
 </script>
