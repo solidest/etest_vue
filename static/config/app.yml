@@ -10,10 +10,10 @@ tabs:
   readme: 树结构组件：用于绑定树形结构数据的UI组件
   router: Tree
 - title: 选择列表
-  id: items
+  id: lists
   icon: mdi-format-list-bulleted
-  readme: 选择列表组件：用于从项内容中进行挑选
-  router: Items
+  readme: 选择列表组件：用于从多项内容中选择
+  router: Lists
 - title: 用例执行
   id: runcase
   icon: mdi-play-box-outline
