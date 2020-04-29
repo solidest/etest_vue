@@ -4,7 +4,7 @@ tabs:
   icon: mdi-home
   readme: ETestVue是ETestDev的UI组件库
   router: Home
-- title: 树结构
+- title: 目录树
   id: tree
   icon: mdi-file-tree
   readme: 树结构组件：用于绑定树形结构数据的UI组件

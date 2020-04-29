@@ -14,16 +14,16 @@
     import Icons from '../feature/icons'
     export default {
         mounted: function () {
-            this.page = 0;
+            this.page = 1;
             this.page_count = Math.floor(Icons.length/48);
         },
         computed: {
             icons: function() {
                 let size = Icons.length;
-                let begin = this.page*48+1;
-                let end = (this.page+1)*48+1;
+                let begin = (this.page-1)*48;
+                let end = this.page*48-1;
                 let res = [];
-                for(let i=begin; i<end && i<size; i++) {
+                for(let i=begin; i<=end && i<size; i++) {
                     res.push(Icons[i]);
                 }
                 return res;
@@ -31,7 +31,7 @@
         },
         data: () => {
             return {
-                page: 0,
+                page: 1,
                 page_count: 0
             }
         }
