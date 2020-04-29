@@ -1,5 +1,5 @@
 <template>
-    <div id="_out_lines" style="overflow-y:auto; height: 100%">
+    <div id="_out_lines" style="overflow-y:auto; height: 100%; width: 100%">
         <div :class="getClass(item)" v-for="(item, idx) in items" :key="idx">
             <span>{{item.text}}</span>
             <span v-html="getSuffix(item)"></span>

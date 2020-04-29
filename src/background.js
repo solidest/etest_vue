@@ -57,8 +57,8 @@ function createWindow() {
       win.webContents.reload();
     });
     Menu.setApplicationMenu(null);
-    win.show();
     sdk.setup(win);
+    win.show();
   });
 
   win.on('closed', () => {

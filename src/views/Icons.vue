@@ -1,0 +1,39 @@
+<template>
+    <v-container>
+        <v-row>
+            <v-col v-for="item in icons" :key="item.name" cols="3">
+                <v-icon>{{'mdi-' + item.name}}</v-icon>
+                <span> {{item.name}} </span>
+            </v-col>
+        </v-row>
+        <v-pagination style="position: absolute; bottom: 8px; left: 0px;" class="pt-4" v-model="page" :length="page_count"></v-pagination>
+    </v-container>
+</template>
+
+<script>
+    import Icons from '../feature/icons'
+    export default {
+        mounted: function () {
+            this.page = 0;
+            this.page_count = Math.floor(Icons.length/48);
+        },
+        computed: {
+            icons: function() {
+                let size = Icons.length;
+                let begin = this.page*48+1;
+                let end = (this.page+1)*48+1;
+                let res = [];
+                for(let i=begin; i<end && i<size; i++) {
+                    res.push(Icons[i]);
+                }
+                return res;
+            }
+        },
+        data: () => {
+            return {
+                page: 0,
+                page_count: 0
+            }
+        }
+    }
+</script>

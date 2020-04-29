@@ -1,0 +1,55 @@
+---
+model:
+  id: 1
+  name: 张三
+  password: J0hnD03!x4
+  skills: Javascript
+  email: john.doe@gmail.com
+  status: true
+schema:
+  legend: User Details
+  fields:
+  - type: input
+    inputType: text
+    label: ID号
+    model: id
+    disabled: true
+  - type: input
+    inputType: text
+    label: 用户名
+    model: name
+    id: user_name
+    placeholder: 请输入用户名
+    required: true
+  - type: input
+    inputType: email
+    label: 电子邮箱
+    model: email
+    placeholder: 请输入邮箱
+  - type: input
+    inputType: password
+    label: 口令
+    model: password
+    min: 6
+    required: true
+    hint: 最少6各字符
+    validator: string
+  - type: select
+    label: 特长
+    model: skills
+    values: 
+    - Javascript
+    - VueJS
+    - CSS3
+    - HTML5
+    selectOptions:
+      noneSelectedText: <无>
+      hideNoneSelectedText: false
+  - type: checkbox
+    label: 硕士
+    model: status
+    default: true
+formOptions:
+  validateAfterLoad: true
+  validateAfterChanged: true
+  validateAsync: true

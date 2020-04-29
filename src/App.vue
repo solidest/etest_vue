@@ -80,7 +80,7 @@
         if (t === 'error') {
           return 100000;
         } else {
-          return 200000;
+          return 10000;
         }
       }
     },

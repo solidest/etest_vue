@@ -28,6 +28,26 @@ Vue.use(VueRouter)
     name: 'Runsingle',
     component: () => import(/* webpackChunkName: "runsingle" */ '../views/RunSingle.vue')
   },
+  {
+    path: '/icons',
+    name: 'Icons',
+    component: () => import(/* webpackChunkName: "icons" */ '../views/Icons.vue')
+  },
+  {
+    path: '/report',
+    name: 'Report',
+    component: () => import(/* webpackChunkName: "report" */ '../views/Report.vue')
+  },
+  {
+    path: '/multitree',
+    name: 'MultiTree',
+    component: () => import(/* webpackChunkName: "multitree" */ '../views/MultiTree.vue')
+  },
+  {
+    path: '/inputform',
+    name: 'InputForm',
+    component: () => import(/* webpackChunkName: "inputform" */ '../views/InputForm.vue')
+  }
 ]
 
 const router = new VueRouter({

@@ -1,0 +1,798 @@
+---
+- id: t
+  name: 测试用例
+  is_dir: true
+  catalog: testcase
+  children:
+  - catalog: testcase
+    name: 01_登录与注册
+    is_dir: true
+    children:
+    - catalog: testcase
+      name: 无效注册
+      type: bpmn
+      id: ku-rciW8m
+      fullpath: 01_登录与注册/无效注册
+      is_dir: true
+      children:
+      - id: _T3x1bzAR
+        suit: 0
+        test: 0
+        name: TCG_1_1
+        type: tcgtest
+        result: ok
+      - id: nqPd4ydqLy
+        suit: 0
+        test: 1
+        name: TCG_1_2
+        type: tcgtest
+        result: ok
+      - id: 8W3ccVfxUk
+        suit: 0
+        test: 2
+        name: TCG_1_3
+        type: tcgtest
+        result: ok
+      - id: xOoyGNSi3w
+        suit: 0
+        test: 3
+        name: TCG_1_4
+        type: tcgtest
+        result: ok
+      - id: M7-WZvNq2_
+        suit: 0
+        test: 4
+        name: TCG_1_5
+        type: tcgtest
+        result: ok
+      - id: smz1CdKyhh
+        suit: 0
+        test: 5
+        name: TCG_1_6
+        type: tcgtest
+        result: ok
+      - id: aHskCExIsk
+        suit: 0
+        test: 6
+        name: TCG_1_7
+        type: tcgtest
+        result: fail
+      - id: jdMSDKjwU0
+        suit: 0
+        test: 7
+        name: TCG_1_8
+        type: tcgtest
+        result: ok
+    - catalog: testcase
+      name: 有效注册
+      type: bpmn
+      id: Z-V9rUhHV
+      fullpath: 01_登录与注册/有效注册
+      is_dir: true
+      children:
+      - id: OomLLIzj5g8
+        suit: 0
+        test: 0
+        name: TCG_1_1
+        type: tcgtest
+        result: ok
+    - catalog: testcase
+      name: 登录
+      type: bpmn
+      id: H0q21Fhwn
+      fullpath: 01_登录与注册/登录
+      is_dir: true
+      children:
+      - id: WQ1IBLDTxGa
+        suit: 0
+        test: 0
+        name: TCG_1_1
+        type: tcgtest
+        result: ok
+      - id: iJXkSuCAo-0
+        suit: 1
+        test: 0
+        name: TCG_2_1
+        type: tcgtest
+        result: ok
+      - id: GDFZTDgk3aX
+        suit: 1
+        test: 1
+        name: TCG_2_2
+        type: tcgtest
+        result: ok
+      - id: L_oXAqXIBUP
+        suit: 1
+        test: 2
+        name: TCG_2_3
+        type: tcgtest
+        result: ok
+    id: t9s2z1a2
+  - catalog: testcase
+    name: 02_项目管理
+    is_dir: true
+    children:
+    - catalog: testcase
+      name: 历史版本兼容验证
+      type: bpmn
+      id: pGEgMwdGf
+      fullpath: 02_项目管理/历史版本兼容验证
+      is_dir: true
+      children:
+      - id: Vy8g9dbk_Eo
+        suit: 0
+        test: 0
+        name: TCG_1_1
+        type: tcgtest
+        result: ok
+      - id: W37Z2KbqTRB
+        suit: 0
+        test: 1
+        name: TCG_1_2
+        type: tcgtest
+        result: fail
+      - id: bo0K0UnM1hR
+        suit: 0
+        test: 2
+        name: TCG_1_3
+        type: tcgtest
+        result: fail
+      - id: EoZ8tJnmsXJ
+        suit: 0
+        test: 3
+        name: TCG_1_4
+        type: tcgtest
+        result: ok
+      - id: jkfupMeFAvA
+        suit: 0
+        test: 4
+        name: TCG_1_5
+        type: tcgtest
+        result: fail
+      - id: ZCeyxAyqsgJ
+        suit: 0
+        test: 5
+        name: TCG_1_6
+        type: tcgtest
+        result: ok
+      - id: Z7UXB86dd9t
+        suit: 0
+        test: 6
+        name: TCG_1_7
+        type: tcgtest
+        result: ok
+      - id: XAvDm7NiOhs
+        suit: 0
+        test: 7
+        name: TCG_1_8
+        type: tcgtest
+        result: ok
+    - catalog: testcase
+      name: 新建_删除_改名
+      type: bpmn
+      id: MegdS8XFP
+      fullpath: 02_项目管理/新建_删除_改名
+      is_dir: true
+      children:
+      - id: rhgHttDD4
+        suit: 0
+        test: 0
+        name: TCG_1_1
+        type: tcgtest
+        result: ok
+      - id: B8y-Fbx-lt
+        suit: 0
+        test: 1
+        name: TCG_1_2
+        type: tcgtest
+        result: ok
+      - id: McJbH16iy3
+        suit: 0
+        test: 2
+        name: TCG_1_3
+        type: tcgtest
+        result: ok
+      - id: DGuA8wAbdN
+        suit: 1
+        test: 0
+        name: TCG_2_1
+        type: tcgtest
+        result: ok
+      - id: cBOvx2UM7O
+        suit: 2
+        test: 0
+        name: TCG_3_1
+        type: tcgtest
+        result: error
+      - id: iZPYOOZHGx
+        suit: 3
+        test: 0
+        name: TCG_4_1
+        type: tcgtest
+        result: ok
+      - id: VB6UfkLQjH
+        suit: 4
+        test: 0
+        name: TCG_5_1
+        type: tcgtest
+        result: error
+      - id: 4yDn4N_LO9
+        suit: 4
+        test: 1
+        name: TCG_5_2
+        type: tcgtest
+        result: ok
+      - id: ucIyPPdf0V
+        suit: 4
+        test: 2
+        name: TCG_5_3
+        type: tcgtest
+        result: fail
+    - catalog: testcase
+      name: 编制_校审_审核
+      type: bpmn
+      id: qidSqPZQq
+      fullpath: 02_项目管理/编制_校审_审核
+      is_dir: true
+      children:
+      - id: Pi-CzT2Euzk
+        suit: 0
+        test: 0
+        name: TCG_1_1
+        type: tcgtest
+        result: ok
+      - id: xh0He1o7Gol
+        suit: 1
+        test: 0
+        name: TCG_2_1
+        type: tcgtest
+        result: ok
+      - id: _cctdocQvBs
+        suit: 2
+        test: 0
+        name: TCG_3_1
+        type: tcgtest
+        result: ok
+      - id: hvX4I3-mtZS
+        suit: 3
+        test: 0
+        name: TCG_4_1
+        type: tcgtest
+        result: ok
+      - id: cyftEsGc2zV
+        suit: 4
+        test: 0
+        name: TCG_5_1
+        type: tcgtest
+        result: ok
+      - id: 6bbmW60ehor
+        suit: 5
+        test: 0
+        name: TCG_6_1
+        type: tcgtest
+        result: fail
+    id: SVLg3eMrA
+  - catalog: testcase
+    name: 03_计算结果验证
+    is_dir: true
+    children:
+    - catalog: testcase
+      name: 分类价格验证
+      type: bpmn
+      id: eSdx57XyI
+      fullpath: 03_计算结果验证/分类价格验证
+      is_dir: true
+      children:
+      - id: RgGAB7MBcpV
+        suit: 0
+        test: 0
+        name: TCG_1_1
+        type: tcgtest
+        result: ok
+      - id: KntgufBUDhc
+        suit: 0
+        test: 1
+        name: TCG_1_2
+        type: tcgtest
+        result: ok
+      - id: lnCLbQgI82p
+        suit: 0
+        test: 2
+        name: TCG_1_3
+        type: tcgtest
+        result: ok
+      - id: pkDLu6PtwXX
+        suit: 0
+        test: 3
+        name: TCG_1_4
+        type: tcgtest
+        result: ok
+      - id: kMGF30Nq02X
+        suit: 0
+        test: 4
+        name: TCG_1_5
+        type: tcgtest
+        result: ok
+      - id: dK2lhqo1pN2
+        suit: 0
+        test: 5
+        name: TCG_1_6
+        type: tcgtest
+        result: fail
+      - id: 8t5pGrwTr1Y
+        suit: 0
+        test: 6
+        name: TCG_1_7
+        type: tcgtest
+        result: ok
+      - id: rmkTFryVcx0
+        suit: 0
+        test: 7
+        name: TCG_1_8
+        type: tcgtest
+        result: ok
+    - catalog: testcase
+      name: 定额套用验证
+      type: bpmn
+      id: a97plc8wv
+      fullpath: 03_计算结果验证/定额套用验证
+      is_dir: true
+      children:
+      - id: wcB7YvX4QWA6
+        suit: 0
+        test: 0
+        name: TCG_1_1
+        type: tcgtest
+        result: ok
+      - id: XqxNZZwHs7eB
+        suit: 1
+        test: 0
+        name: TCG_2_1
+        type: tcgtest
+        result: ok
+      - id: Jh0rk5Wwxogp
+        suit: 2
+        test: 0
+        name: TCG_3_1
+        type: tcgtest
+        result: ok
+      - id: 5jFUD64Qd7-j
+        suit: 3
+        test: 0
+        name: TCG_4_1
+        type: tcgtest
+        result: fail
+      - id: F4wmKNwRiYOW
+        suit: 4
+        test: 0
+        name: TCG_5_1
+        type: tcgtest
+        result: ok
+      - id: BFyt_oOj_QMS
+        suit: 4
+        test: 1
+        name: TCG_5_2
+        type: tcgtest
+        result: fail
+      - id: TYQxefFpGUji
+        suit: 4
+        test: 2
+        name: TCG_5_3
+        type: tcgtest
+        result: ok
+      - id: MYcSrYjKLShN
+        suit: 4
+        test: 3
+        name: TCG_5_4
+        type: tcgtest
+        result: ok
+      - id: 3mMEdvbBA1s5
+        suit: 4
+        test: 4
+        name: TCG_5_5
+        type: tcgtest
+        result: ok
+    - catalog: testcase
+      name: 清单计算验证
+      type: bpmn
+      id: RPI29omdQ
+      fullpath: 03_计算结果验证/清单计算验证
+      is_dir: true
+      children:
+      - id: 1y-OiKzAed-k
+        suit: 0
+        test: 0
+        name: TCG_1_1
+        type: tcgtest
+        result: ok
+    id: b8bhN3kL9
+  - catalog: testcase
+    name: 04_工程清单操作
+    is_dir: true
+    children:
+    - catalog: testcase
+      name: 其它费用
+      type: bpmn
+      id: fp1nZAvae
+      fullpath: 04_工程清单操作/其它费用
+      is_dir: true
+      children:
+      - id: Yqsl6ldLID1Q
+        suit: 0
+        test: 0
+        name: TCG_1_1
+        type: tcgtest
+        result: ok
+      - id: Y9fsZxnMPOhH
+        suit: 1
+        test: 0
+        name: TCG_2_1
+        type: tcgtest
+        result: ok
+      - id: VnkrxAEakwxQ
+        suit: 2
+        test: 0
+        name: TCG_3_1
+        type: tcgtest
+        result: ok
+      - id: cgE7SszeiPty
+        suit: 3
+        test: 0
+        name: TCG_4_1
+        type: tcgtest
+        result: fail
+      - id: vlrhbvIfuFgm
+        suit: 4
+        test: 0
+        name: TCG_5_1
+        type: tcgtest
+        result: ok
+      - id: iw6xOJV4TJ-9
+        suit: 5
+        test: 0
+        name: TCG_6_1
+        type: tcgtest
+        result: fail
+    - catalog: testcase
+      name: 分年度投资
+      type: bpmn
+      id: g8JTeO_Se
+      fullpath: 04_工程清单操作/分年度投资
+      is_dir: true
+      children:
+      - id: 23Lmz9e7wi90
+        suit: 0
+        test: 0
+        name: TCG_1_1
+        type: tcgtest
+        result: ok
+      - id: AbwzgAi3N0KB
+        suit: 1
+        test: 0
+        name: TCG_2_1
+        type: tcgtest
+        result: ok
+    - catalog: testcase
+      name: 工程总概算
+      type: bpmn
+      id: 7T5RyTRZB
+      fullpath: 04_工程清单操作/工程总概算
+      is_dir: true
+      children:
+      - id: KmaSFP2Y7oUG
+        suit: 0
+        test: 0
+        name: TCG_1_1
+        type: tcgtest
+        result: ok
+      - id: UocdCqkrThpJ
+        suit: 1
+        test: 0
+        name: TCG_2_1
+        type: tcgtest
+        result: ok
+    - catalog: testcase
+      name: 建筑工程
+      type: bpmn
+      id: omwzRJCGJ
+      fullpath: 04_工程清单操作/建筑工程
+      is_dir: true
+      children:
+      - id: zqcsPdB2_5Fs
+        suit: 0
+        test: 0
+        name: TCG_1_1
+        type: tcgtest
+        result: ok
+      - id: BL3urXCKxGl-
+        suit: 1
+        test: 0
+        name: TCG_2_1
+        type: tcgtest
+        result: ok
+      - id: 2OvlodJZPtBl
+        suit: 2
+        test: 0
+        name: TCG_3_1
+        type: tcgtest
+        result: ok
+      - id: uYdG5EU_G5jL
+        suit: 3
+        test: 0
+        name: TCG_4_1
+        type: tcgtest
+        result: ok
+      - id: cRtGQv2SdFLe
+        suit: 4
+        test: 0
+        name: TCG_5_1
+        type: tcgtest
+        result: ok
+      - id: vNmkxDVX4A7k
+        suit: 5
+        test: 0
+        name: TCG_6_1
+        type: tcgtest
+        result: ok
+    - catalog: testcase
+      name: 施工辅助工程操作
+      type: bpmn
+      id: M0x8-9SO5
+      fullpath: 04_工程清单操作/施工辅助工程操作
+      is_dir: true
+      children:
+      - id: d47QYN8z5p2O
+        suit: 0
+        test: 0
+        name: TCG_1_1
+        type: tcgtest
+        result: ok
+      - id: 7Teb8E1CtWkH
+        suit: 1
+        test: 0
+        name: TCG_2_1
+        type: tcgtest
+        result: ok
+      - id: WHCXlVDsJ1Dh
+        suit: 2
+        test: 0
+        name: TCG_3_1
+        type: tcgtest
+        result: ok
+      - id: dvJmGANoLD53
+        suit: 3
+        test: 0
+        name: TCG_4_1
+        type: tcgtest
+        result: ok
+      - id: 37OI9WT6H0Qc
+        suit: 4
+        test: 0
+        name: TCG_5_1
+        type: tcgtest
+        result: ok
+      - id: kZy5pOvL79fA
+        suit: 5
+        test: 0
+        name: TCG_6_1
+        type: tcgtest
+        result: ok
+    - catalog: testcase
+      name: 设备及安装工程
+      type: bpmn
+      id: J55rGqK_l
+      fullpath: 04_工程清单操作/设备及安装工程
+      is_dir: true
+      children:
+      - id: WmZEJAJi_Qs7
+        suit: 0
+        test: 0
+        name: TCG_1_1
+        type: tcgtest
+        result: ok
+      - id: KYlkVXfpTLi2
+        suit: 1
+        test: 0
+        name: TCG_2_1
+        type: tcgtest
+        result: ok
+      - id: VjmVLw_BoRdn
+        suit: 2
+        test: 0
+        name: TCG_3_1
+        type: tcgtest
+        result: ok
+      - id: fxIewqWCLssp
+        suit: 3
+        test: 0
+        name: TCG_4_1
+        type: tcgtest
+        result: fail
+      - id: jkbhiroJ01Yv
+        suit: 4
+        test: 0
+        name: TCG_5_1
+        type: tcgtest
+        result: error
+      - id: seLSjCiMfCiX
+        suit: 5
+        test: 0
+        name: TCG_6_1
+        type: tcgtest
+        result: ok
+    id: oOIAPAPBB
+  - catalog: testcase
+    name: 05_报表编制
+    is_dir: true
+    children:
+    - catalog: testcase
+      name: 报表生成
+      type: bpmn
+      id: acy1lllSlq
+      fullpath: 05_报表编制/报表生成
+      is_dir: true
+      children:
+      - id: noLFhVNpiFpV
+        suit: 0
+        test: 0
+        name: TCG_1_1
+        type: tcgtest
+        result: ok
+      - id: tcNAmasDr0QK
+        suit: 0
+        test: 1
+        name: TCG_1_2
+        type: tcgtest
+        result: ok
+      - id: 7F4LtVO4sgEU
+        suit: 0
+        test: 2
+        name: TCG_1_3
+        type: tcgtest
+        result: ok
+      - id: OESJt5lrjytM
+        suit: 0
+        test: 3
+        name: TCG_1_4
+        type: tcgtest
+        result: ok
+      - id: xjqPCXdk5n4S
+        suit: 0
+        test: 4
+        name: TCG_1_5
+        type: tcgtest
+        result: ok
+      - id: fHkGICDbDOXC
+        suit: 0
+        test: 5
+        name: TCG_1_6
+        type: tcgtest
+        result: ok
+      - id: tdbt_QmOT6-x
+        suit: 0
+        test: 6
+        name: TCG_1_7
+        type: tcgtest
+        result: ok
+      - id: NWjPNGt5LM04
+        suit: 0
+        test: 7
+        name: TCG_1_8
+        type: tcgtest
+        result: ok
+      - id: lVKv5xwxg23B
+        suit: 0
+        test: 8
+        name: TCG_1_9
+        type: tcgtest
+        result: ok
+      - id: nSiVFHV4Qdut
+        suit: 0
+        test: 9
+        name: TCG_1_10
+        type: tcgtest
+        result: fail
+      - id: 93hgXlveZTLJ
+        suit: 1
+        test: 0
+        name: TCG_2_1
+        type: tcgtest
+        result: ok
+      - id: 5ebGNDbFXMPU
+        suit: 1
+        test: 1
+        name: TCG_2_2
+        type: tcgtest
+        result: ok
+      - id: TSJ0ESP7ANqz
+        suit: 1
+        test: 2
+        name: TCG_2_3
+        type: tcgtest
+        result: ok
+      - id: DV__i5tuWrY2
+        suit: 1
+        test: 3
+        name: TCG_2_4
+        type: tcgtest
+        result: ok
+      - id: gah1-BlY_I6A
+        suit: 1
+        test: 4
+        name: TCG_2_5
+        type: tcgtest
+        result: ok
+      - id: nDNIDwqeyfcy
+        suit: 1
+        test: 5
+        name: TCG_2_6
+        type: tcgtest
+        result: ok
+      - id: z-6RchlQEAVX
+        suit: 1
+        test: 6
+        name: TCG_2_7
+        type: tcgtest
+        result: ok
+      - id: Ze4Zf-xdbHoV
+        suit: 1
+        test: 7
+        name: TCG_2_8
+        type: tcgtest
+        result: ok
+      - id: j7a_2pF-Je-2
+        suit: 1
+        test: 8
+        name: TCG_2_9
+        type: tcgtest
+        result: ok
+      - id: 9ASUYFublOz9
+        suit: 1
+        test: 9
+        name: TCG_2_10
+        type: tcgtest
+        result: ok
+    id: H5HSNyc-A6
+  - catalog: testcase
+    name: 临时测试
+    is_dir: true
+    children:
+    - catalog: testcase
+      name: test
+      type: bpmn
+      id: 6_6cJv4SJy
+      fullpath: 临时测试/test
+      is_dir: true
+      children:
+      - id: BGyjYPYVvV1Z
+        suit: 0
+        test: 0
+        name: TCG_1_1
+        type: tcgtest
+        result: ok
+      - id: ZGo3tmjBEh34
+        suit: 0
+        test: 1
+        name: TCG_1_2
+        type: tcgtest
+        result: ok
+      - id: O0h9jhcbpdI5
+        suit: 0
+        test: 2
+        name: TCG_1_3
+        type: tcgtest
+        result: ok
+    - catalog: testcase
+      name: test01
+      type: bpmn
+      id: heQwMVzgLW
+      fullpath: 临时测试/test01
+      is_dir: true
+      children:
+      - id: aoGPE58ak4_K
+        suit: 0
+        test: 0
+        name: TCG_1_1
+        type: tcgtest
+        result: ok
+    id: kX_r7J4k4

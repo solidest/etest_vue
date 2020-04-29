@@ -5,7 +5,6 @@ const {
 } = require('electron');
 const fs = require('fs');
 
-
 let _db = null;
 let _run_uuid = null;
 let _timer = null;
@@ -18,6 +17,7 @@ function send_sys_err(msg) {
 
 //推送系统信息
 function send_sys_info(time, msg, msg_type) {
+    // assert(!_render)
     _render.webContents.send('sys-info', time, msg, msg_type);
 }
 
@@ -174,6 +174,7 @@ ipcMain.on('cmd-run', run);
 
 function setup(render) {
     _render = render;
+    // assert(!_render)
     state();
 }
 

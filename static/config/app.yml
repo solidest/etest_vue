@@ -34,15 +34,23 @@ tabs:
 - title: 输入表单
   id: inputform
   icon: mdi-form-select
-  readme: 输入表单组件：通过配置文件自动生成的输入表单，可用于手工输入数据，实现测试程序的人机交互功能
+  readme: 输入表单组件：通过配置文件动态生成的输入表单
+  router: InputForm
 - title: 批量执行
   id: multirun
   icon: mdi-animation-play-outline
   readme: 批量执行组件：用于任意选择多个用例，然后批量自动执行
+  router: MultiTree
 - title: 执行报告
   id: report
   icon: mdi-clipboard-play-outline
   readme: 执行报告组件：用例执行统计报表
+  router: Report
+- title: 图标库
+  id: icons
+  icon: mdi-flower
+  readme: ETestVue内置的图标库
+  router: Icons
 - title: 开发手册
   id: help
   icon: mdi-book-open-outline
