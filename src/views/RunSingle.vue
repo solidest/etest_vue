@@ -1,25 +1,13 @@
 <template>
     <v-container fluid fill-height>
         <v-row>
-            <v-card outlined width="500px" height="80px" class="mx-auto">
-                <v-list-item>
-                    <v-list-item-content>
-                        <v-list-item-title>用例xxxx</v-list-item-title>
-                        <v-list-item-subtitle>说明：用例xxxx针对部件A的yyy功能进行自动检查</v-list-item-subtitle>
-                    </v-list-item-content>
-                    <v-list-item-action>
-                        <v-btn color="primary" depressed fab>
-                            <v-icon large>
-                                mdi-play
-                            </v-icon>
-                        </v-btn>
-                    </v-list-item-action>
-                </v-list-item>
+            <v-card outlined width="500px" height="100px" class="mx-auto">
+                <button-run :run_id="cfg.run_id" :panel_id="panel_id" :run_title="cfg.title" :run_memo="cfg.memo" />
             </v-card>
         </v-row>
         <v-row>
-            <v-card outlined width="500px" height="360px" class="mx-auto pa-4">
-
+            <v-card outlined width="500px" height="460px" class="mx-auto pa-4">
+                <run-out :panel_id="panel_id"/>
             </v-card>
         </v-row>
     </v-container>
@@ -27,14 +15,18 @@
 
 <script>
     export default {
-        name: 'home',
+        components: {
+            'button-run': () => import( /* webpackChunkName: "button-run" */ '../components/ButtonRun'),
+            'run-out': () => import( /* webpackChunkName: "run-out" */ '../components/RunOut'),
+        },
         created: function () {
-            this.items = this.$store.getters.getConfig('lists');
+            this.cfg = this.$store.getters.getConfig('panel_out');
         },
 
         data: () => {
             return {
-                items: []
+                cfg: {},
+                panel_id: 'out'
             }
         }
 

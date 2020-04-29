@@ -1,1 +1,516 @@
-{"filename":"logdb/record.json","collections":[{"name":"output","data":[{"catalog":"system","kind":"start","time":0,"value":"c855bd15-9f91-4e0e-9ce2-37064c41b605","meta":{"revision":0,"created":1587894259270,"version":0},"$loki":1},{"catalog":"system","kind":"entry","time":1,"value":"record.lua","meta":{"revision":0,"created":1587894259309,"version":0},"$loki":2},{"catalog":"record","kind":"data","time":102144574,"meta":{"revision":0,"created":1587894259398,"version":0},"$loki":3},{"catalog":"system","kind":"print","time":102172534,"value":"interval 1","meta":{"revision":0,"created":1587894259398,"version":0},"$loki":4},{"catalog":"record","kind":"data","time":402943338,"meta":{"revision":0,"created":1587894259703,"version":0},"$loki":5},{"catalog":"system","kind":"print","time":402973992,"value":"interval 2","meta":{"revision":0,"created":1587894259703,"version":0},"$loki":6},{"catalog":"record","kind":"data","time":703661937,"meta":{"revision":0,"created":1587894260050,"version":0},"$loki":7},{"catalog":"system","kind":"print","time":703691949,"value":"interval 3","meta":{"revision":0,"created":1587894260050,"version":0},"$loki":8},{"catalog":"system","kind":"print","time":1004382930,"value":"interval 4","meta":{"revision":0,"created":1587894260303,"version":0},"$loki":9},{"catalog":"record","kind":"data","time":1305058094,"meta":{"revision":0,"created":1587894260603,"version":0},"$loki":10},{"catalog":"system","kind":"print","time":1305083320,"value":"interval 5","meta":{"revision":0,"created":1587894260603,"version":0},"$loki":11},{"catalog":"record","kind":"data","time":1607171183,"meta":{"revision":0,"created":1587894260901,"version":0},"$loki":12},{"catalog":"system","kind":"print","time":1607210591,"value":"interval 6","meta":{"revision":0,"created":1587894260901,"version":0},"$loki":13},{"catalog":"record","kind":"data","time":1907949606,"meta":{"revision":0,"created":1587894261240,"version":0},"$loki":14},{"catalog":"system","kind":"print","time":1907984760,"value":"interval 7","meta":{"revision":0,"created":1587894261240,"version":0},"$loki":15},{"catalog":"record","kind":"data","time":2208678099,"meta":{"revision":0,"created":1587894261540,"version":0},"$loki":16},{"catalog":"system","kind":"print","time":2208713910,"value":"interval 8","meta":{"revision":0,"created":1587894261540,"version":0},"$loki":17},{"catalog":"record","kind":"data","time":2509988878,"meta":{"revision":0,"created":1587894261806,"version":0},"$loki":18},{"catalog":"system","kind":"print","time":2510020115,"value":"interval 9","meta":{"revision":0,"created":1587894261806,"version":0},"$loki":19},{"catalog":"record","kind":"data","time":2811135312,"meta":{"revision":0,"created":1587894262106,"version":0},"$loki":20},{"catalog":"system","kind":"print","time":2811170376,"value":"interval 10","meta":{"revision":0,"created":1587894262106,"version":0},"$loki":21},{"catalog":"record","kind":"data","time":3001765690,"meta":{"revision":0,"created":1587894262326,"version":0},"$loki":22},{"catalog":"system","kind":"exit","time":3016835233,"value":"record.lua","meta":{"revision":0,"created":1587894262326,"version":0},"$loki":23},{"catalog":"system","exit_code":0,"kind":"stop","time":3070205852,"value":"c855bd15-9f91-4e0e-9ce2-37064c41b605","meta":{"revision":0,"created":1587894262371,"version":0},"$loki":24}],"idIndex":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24],"binaryIndices":{},"constraints":null,"uniqueNames":["time"],"transforms":{},"objType":"output","dirty":false,"cachedIndex":null,"cachedBinaryIndex":null,"cachedData":null,"adaptiveBinaryIndices":true,"transactional":false,"cloneObjects":false,"cloneMethod":"parse-stringify","asyncListeners":false,"disableMeta":false,"disableChangesApi":true,"disableDeltaChangesApi":true,"autoupdate":false,"serializableIndices":true,"ttl":null,"maxId":24,"DynamicViews":[],"events":{"insert":[],"update":[],"pre-insert":[],"pre-update":[],"close":[],"flushbuffer":[],"error":[],"delete":[null],"warning":[null]},"changes":[],"dirtyIds":[]},{"name":"record","data":[{"a":0,"b":0,"c":0,"e":{"x":10,"y":0},"$time":102144574,"meta":{"revision":0,"created":1587894259398,"version":0},"$loki":1},{"a":1,"b":0,"c":0,"e":{"x":23,"y":10},"$time":402943338,"meta":{"revision":0,"created":1587894259703,"version":0},"$loki":2},{"a":2,"b":0,"c":0,"e":{"x":43,"y":20},"$time":703661937,"meta":{"revision":0,"created":1587894260050,"version":0},"$loki":3},{"a":4,"b":0,"c":0,"e":{"x":83,"y":40},"$time":1305058094,"meta":{"revision":0,"created":1587894260603,"version":0},"$loki":4},{"a":5,"b":0,"c":0,"e":{"x":103,"y":50},"$time":1607171183,"meta":{"revision":0,"created":1587894260901,"version":0},"$loki":5},{"a":6,"b":0,"c":0,"e":{"x":123,"y":60},"$time":1907949606,"meta":{"revision":0,"created":1587894261240,"version":0},"$loki":6},{"a":7,"b":0,"c":0,"e":{"x":143,"y":70},"$time":2208678099,"meta":{"revision":0,"created":1587894261540,"version":0},"$loki":7},{"a":8,"b":0,"c":0,"e":{"x":163,"y":80},"$time":2509988878,"meta":{"revision":0,"created":1587894261806,"version":0},"$loki":8},{"a":9,"b":0,"c":0,"e":{"x":183,"y":90},"$time":2811135312,"meta":{"revision":0,"created":1587894262106,"version":0},"$loki":9},{"a":10,"b":0,"c":0,"e":{"x":203,"y":100},"$time":3001765690,"meta":{"revision":0,"created":1587894262326,"version":0},"$loki":10}],"idIndex":[1,2,3,4,5,6,7,8,9,10],"binaryIndices":{},"constraints":null,"uniqueNames":["$time"],"transforms":{},"objType":"record","dirty":false,"cachedIndex":null,"cachedBinaryIndex":null,"cachedData":null,"adaptiveBinaryIndices":true,"transactional":false,"cloneObjects":false,"cloneMethod":"parse-stringify","asyncListeners":false,"disableMeta":false,"disableChangesApi":true,"disableDeltaChangesApi":true,"autoupdate":false,"serializableIndices":true,"ttl":null,"maxId":10,"DynamicViews":[],"events":{"insert":[],"update":[],"pre-insert":[],"pre-update":[],"close":[],"flushbuffer":[],"error":[],"delete":[null],"warning":[null]},"changes":[],"dirtyIds":[]}],"databaseVersion":1.5,"engineVersion":1.5,"autosave":true,"autosaveInterval":4000,"autosaveHandle":null,"throttledSaves":true,"options":{"autoload":true,"autosave":true,"autosaveInterval":4000,"serializationMethod":"normal","destructureDelimiter":"$<\n","recursiveWait":true,"recursiveWaitLimit":false,"recursiveWaitLimitDuration":2000,"started":1587894259271},"persistenceMethod":"fs","persistenceAdapter":null,"verbose":false,"events":{"init":[null],"loaded":[],"flushChanges":[],"close":[],"changes":[],"warning":[]},"ENV":"NODEJS"}
+{
+    "filename": "logdb/record.json",
+    "collections": [{
+        "name": "output",
+        "data": [{
+            "catalog": "system",
+            "kind": "start",
+            "time": 0,
+            "value": "c855bd15-9f91-4e0e-9ce2-37064c41b605",
+            "meta": {
+                "revision": 0,
+                "created": 1587894259270,
+                "version": 0
+            },
+            "$loki": 1
+        }, {
+            "catalog": "system",
+            "kind": "entry",
+            "time": 1,
+            "value": "record.lua",
+            "meta": {
+                "revision": 0,
+                "created": 1587894259309,
+                "version": 0
+            },
+            "$loki": 2
+        }, {
+            "catalog": "record",
+            "kind": "data",
+            "time": 102144574,
+            "meta": {
+                "revision": 0,
+                "created": 1587894259398,
+                "version": 0
+            },
+            "$loki": 3
+        }, {
+            "catalog": "system",
+            "kind": "print",
+            "time": 102172534,
+            "value": "interval 1",
+            "meta": {
+                "revision": 0,
+                "created": 1587894259398,
+                "version": 0
+            },
+            "$loki": 4
+        }, {
+            "catalog": "record",
+            "kind": "data",
+            "time": 402943338,
+            "meta": {
+                "revision": 0,
+                "created": 1587894259703,
+                "version": 0
+            },
+            "$loki": 5
+        }, {
+            "catalog": "system",
+            "kind": "print",
+            "time": 402973992,
+            "value": "interval 2",
+            "meta": {
+                "revision": 0,
+                "created": 1587894259703,
+                "version": 0
+            },
+            "$loki": 6
+        }, {
+            "catalog": "record",
+            "kind": "data",
+            "time": 703661937,
+            "meta": {
+                "revision": 0,
+                "created": 1587894260050,
+                "version": 0
+            },
+            "$loki": 7
+        }, {
+            "catalog": "system",
+            "kind": "print",
+            "time": 703691949,
+            "value": "interval 3",
+            "meta": {
+                "revision": 0,
+                "created": 1587894260050,
+                "version": 0
+            },
+            "$loki": 8
+        }, {
+            "catalog": "system",
+            "kind": "print",
+            "time": 1004382930,
+            "value": "interval 4",
+            "meta": {
+                "revision": 0,
+                "created": 1587894260303,
+                "version": 0
+            },
+            "$loki": 9
+        }, {
+            "catalog": "record",
+            "kind": "data",
+            "time": 1305058094,
+            "meta": {
+                "revision": 0,
+                "created": 1587894260603,
+                "version": 0
+            },
+            "$loki": 10
+        }, {
+            "catalog": "system",
+            "kind": "print",
+            "time": 1305083320,
+            "value": "interval 5",
+            "meta": {
+                "revision": 0,
+                "created": 1587894260603,
+                "version": 0
+            },
+            "$loki": 11
+        }, {
+            "catalog": "record",
+            "kind": "data",
+            "time": 1607171183,
+            "meta": {
+                "revision": 0,
+                "created": 1587894260901,
+                "version": 0
+            },
+            "$loki": 12
+        }, {
+            "catalog": "system",
+            "kind": "print",
+            "time": 1607210591,
+            "value": "interval 6",
+            "meta": {
+                "revision": 0,
+                "created": 1587894260901,
+                "version": 0
+            },
+            "$loki": 13
+        }, {
+            "catalog": "record",
+            "kind": "data",
+            "time": 1907949606,
+            "meta": {
+                "revision": 0,
+                "created": 1587894261240,
+                "version": 0
+            },
+            "$loki": 14
+        }, {
+            "catalog": "system",
+            "kind": "print",
+            "time": 1907984760,
+            "value": "interval 7",
+            "meta": {
+                "revision": 0,
+                "created": 1587894261240,
+                "version": 0
+            },
+            "$loki": 15
+        }, {
+            "catalog": "record",
+            "kind": "data",
+            "time": 2208678099,
+            "meta": {
+                "revision": 0,
+                "created": 1587894261540,
+                "version": 0
+            },
+            "$loki": 16
+        }, {
+            "catalog": "system",
+            "kind": "print",
+            "time": 2208713910,
+            "value": "interval 8",
+            "meta": {
+                "revision": 0,
+                "created": 1587894261540,
+                "version": 0
+            },
+            "$loki": 17
+        }, {
+            "catalog": "record",
+            "kind": "data",
+            "time": 2509988878,
+            "meta": {
+                "revision": 0,
+                "created": 1587894261806,
+                "version": 0
+            },
+            "$loki": 18
+        }, {
+            "catalog": "system",
+            "kind": "print",
+            "time": 2510020115,
+            "value": "interval 9",
+            "meta": {
+                "revision": 0,
+                "created": 1587894261806,
+                "version": 0
+            },
+            "$loki": 19
+        }, {
+            "catalog": "record",
+            "kind": "data",
+            "time": 2811135312,
+            "meta": {
+                "revision": 0,
+                "created": 1587894262106,
+                "version": 0
+            },
+            "$loki": 20
+        }, {
+            "catalog": "system",
+            "kind": "print",
+            "time": 2811170376,
+            "value": "interval 10",
+            "meta": {
+                "revision": 0,
+                "created": 1587894262106,
+                "version": 0
+            },
+            "$loki": 21
+        }, {
+            "catalog": "record",
+            "kind": "data",
+            "time": 3001765690,
+            "meta": {
+                "revision": 0,
+                "created": 1587894262326,
+                "version": 0
+            },
+            "$loki": 22
+        }, {
+            "catalog": "system",
+            "kind": "exit",
+            "time": 3016835233,
+            "value": "record.lua",
+            "meta": {
+                "revision": 0,
+                "created": 1587894262326,
+                "version": 0
+            },
+            "$loki": 23
+        }, {
+            "catalog": "system",
+            "exit_code": 0,
+            "kind": "stop",
+            "time": 3070205852,
+            "value": "c855bd15-9f91-4e0e-9ce2-37064c41b605",
+            "meta": {
+                "revision": 0,
+                "created": 1587894262371,
+                "version": 0
+            },
+            "$loki": 24
+        }],
+        "idIndex": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24],
+        "binaryIndices": {},
+        "constraints": null,
+        "uniqueNames": ["time"],
+        "transforms": {},
+        "objType": "output",
+        "dirty": false,
+        "cachedIndex": null,
+        "cachedBinaryIndex": null,
+        "cachedData": null,
+        "adaptiveBinaryIndices": true,
+        "transactional": false,
+        "cloneObjects": false,
+        "cloneMethod": "parse-stringify",
+        "asyncListeners": false,
+        "disableMeta": false,
+        "disableChangesApi": true,
+        "disableDeltaChangesApi": true,
+        "autoupdate": false,
+        "serializableIndices": true,
+        "ttl": null,
+        "maxId": 24,
+        "DynamicViews": [],
+        "events": {
+            "insert": [],
+            "update": [],
+            "pre-insert": [],
+            "pre-update": [],
+            "close": [],
+            "flushbuffer": [],
+            "error": [],
+            "delete": [null],
+            "warning": [null]
+        },
+        "changes": [],
+        "dirtyIds": []
+    }, {
+        "name": "record",
+        "data": [{
+            "a": 0,
+            "b": 0,
+            "c": 0,
+            "e": {
+                "x": 10,
+                "y": 0
+            },
+            "$time": 102144574,
+            "meta": {
+                "revision": 0,
+                "created": 1587894259398,
+                "version": 0
+            },
+            "$loki": 1
+        }, {
+            "a": 1,
+            "b": 0,
+            "c": 0,
+            "e": {
+                "x": 23,
+                "y": 10
+            },
+            "$time": 402943338,
+            "meta": {
+                "revision": 0,
+                "created": 1587894259703,
+                "version": 0
+            },
+            "$loki": 2
+        }, {
+            "a": 2,
+            "b": 0,
+            "c": 0,
+            "e": {
+                "x": 43,
+                "y": 20
+            },
+            "$time": 703661937,
+            "meta": {
+                "revision": 0,
+                "created": 1587894260050,
+                "version": 0
+            },
+            "$loki": 3
+        }, {
+            "a": 4,
+            "b": 0,
+            "c": 0,
+            "e": {
+                "x": 83,
+                "y": 40
+            },
+            "$time": 1305058094,
+            "meta": {
+                "revision": 0,
+                "created": 1587894260603,
+                "version": 0
+            },
+            "$loki": 4
+        }, {
+            "a": 5,
+            "b": 0,
+            "c": 0,
+            "e": {
+                "x": 103,
+                "y": 50
+            },
+            "$time": 1607171183,
+            "meta": {
+                "revision": 0,
+                "created": 1587894260901,
+                "version": 0
+            },
+            "$loki": 5
+        }, {
+            "a": 6,
+            "b": 0,
+            "c": 0,
+            "e": {
+                "x": 123,
+                "y": 60
+            },
+            "$time": 1907949606,
+            "meta": {
+                "revision": 0,
+                "created": 1587894261240,
+                "version": 0
+            },
+            "$loki": 6
+        }, {
+            "a": 7,
+            "b": 0,
+            "c": 0,
+            "e": {
+                "x": 143,
+                "y": 70
+            },
+            "$time": 2208678099,
+            "meta": {
+                "revision": 0,
+                "created": 1587894261540,
+                "version": 0
+            },
+            "$loki": 7
+        }, {
+            "a": 8,
+            "b": 0,
+            "c": 0,
+            "e": {
+                "x": 163,
+                "y": 80
+            },
+            "$time": 2509988878,
+            "meta": {
+                "revision": 0,
+                "created": 1587894261806,
+                "version": 0
+            },
+            "$loki": 8
+        }, {
+            "a": 9,
+            "b": 0,
+            "c": 0,
+            "e": {
+                "x": 183,
+                "y": 90
+            },
+            "$time": 2811135312,
+            "meta": {
+                "revision": 0,
+                "created": 1587894262106,
+                "version": 0
+            },
+            "$loki": 9
+        }, {
+            "a": 10,
+            "b": 0,
+            "c": 0,
+            "e": {
+                "x": 203,
+                "y": 100
+            },
+            "$time": 3001765690,
+            "meta": {
+                "revision": 0,
+                "created": 1587894262326,
+                "version": 0
+            },
+            "$loki": 10
+        }],
+        "idIndex": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+        "binaryIndices": {},
+        "constraints": null,
+        "uniqueNames": ["$time"],
+        "transforms": {},
+        "objType": "record",
+        "dirty": false,
+        "cachedIndex": null,
+        "cachedBinaryIndex": null,
+        "cachedData": null,
+        "adaptiveBinaryIndices": true,
+        "transactional": false,
+        "cloneObjects": false,
+        "cloneMethod": "parse-stringify",
+        "asyncListeners": false,
+        "disableMeta": false,
+        "disableChangesApi": true,
+        "disableDeltaChangesApi": true,
+        "autoupdate": false,
+        "serializableIndices": true,
+        "ttl": null,
+        "maxId": 10,
+        "DynamicViews": [],
+        "events": {
+            "insert": [],
+            "update": [],
+            "pre-insert": [],
+            "pre-update": [],
+            "close": [],
+            "flushbuffer": [],
+            "error": [],
+            "delete": [null],
+            "warning": [null]
+        },
+        "changes": [],
+        "dirtyIds": []
+    }],
+    "databaseVersion": 1.5,
+    "engineVersion": 1.5,
+    "autosave": true,
+    "autosaveInterval": 4000,
+    "autosaveHandle": null,
+    "throttledSaves": true,
+    "options": {
+        "autoload": true,
+        "autosave": true,
+        "autosaveInterval": 4000,
+        "serializationMethod": "normal",
+        "destructureDelimiter": "$<\n",
+        "recursiveWait": true,
+        "recursiveWaitLimit": false,
+        "recursiveWaitLimitDuration": 2000,
+        "started": 1587894259271
+    },
+    "persistenceMethod": "fs",
+    "persistenceAdapter": null,
+    "verbose": false,
+    "events": {
+        "init": [null],
+        "loaded": [],
+        "flushChanges": [],
+        "close": [],
+        "changes": [],
+        "warning": []
+    },
+    "ENV": "NODEJS"
+}

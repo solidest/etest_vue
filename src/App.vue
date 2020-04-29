@@ -69,7 +69,6 @@
       },
       tip_color: function () {
         let c = this.$store.state.last_tip.tip_type;
-        console.log(c)
         if(c==='info') {
           return 'grey darken-1';
         } else {

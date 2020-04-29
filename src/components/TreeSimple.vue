@@ -1,3 +1,5 @@
+
+
 <template>
     <v-treeview return-object :items="items" activatable item-key="id" open-on-click>
         <template v-slot:prepend="{ item, open }">
@@ -10,9 +12,13 @@
         </template>
     </v-treeview>
 </template>
+
 <script>
+    /**
+     * 简单树结构组件，使用文件夹图标
+     */
     export default {
-        name: 'dev-tree',
+        name: 'tree-simple',
         props: ['config'],
 
         data: () => {

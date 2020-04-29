@@ -1,8 +1,10 @@
-import Vue from 'vue'
-import Vuex from 'vuex'
-import {ipcRenderer, remote, shell} from 'electron'
+import Vue from 'vue';
+import Vuex from 'vuex';
+import {ipcRenderer, remote, shell} from 'electron';
 const fs = require('fs');
 import yaml from 'js-yaml';
+import OutParser from '../feature/parse_out';
+
 
 Vue.use(Vuex);
 
@@ -15,11 +17,11 @@ const _store = new  Vuex.Store({
     },
     work: {
       run_state: 'idle',
-      run_uuid: null,
-      run_prog_id: null,
-      run_panel_id: null
+      run_logs: null,
+      run_id: null,
+      panel_id: null,
+      last_result: null,
     },
-    syslogs: [],
     records: [],
   },
   mutations: {
@@ -44,12 +46,26 @@ const _store = new  Vuex.Store({
     },
     updateWorkState: function (state, work) {
       state.work.run_state = work.run_state;
-      state.work.run_uuid = work.run_uuid;
+      if(work.run_uuid){
+        state.work.run_logs = new OutParser(work.run_uuid);
+        state.work.last_result = null;
+      } else if(state.work.run_logs) {
+        state.work.last_result = state.work.run_logs.lastResut();
+      }
     },
     updateSyslog: function(state, log) {
-      state.syslogs.push(log);
+      let logs = state.work.run_logs;
+      if(logs) {
+        logs.pushLog(log);
+      } else {
+        state.last_tip.tip_msg = '内部错误1';
+        state.last_tip.tip_type = 'error';
+        state.last_tip.tip = true;
+      }
     },
     updateRecord: function(state, rcds) {
+      //console.log('updateRecord', rcds.length)
+
       let _rcds = state.records;
       for(let r of rcds) {
         _rcds.push(r);
@@ -64,7 +80,8 @@ const _store = new  Vuex.Store({
     cmdRun: function(state, run_info) {
       state.syslogs = [];
       state.records = [];
-      state.work.run_panel_id = run_info.ui_id;
+      state.work.run_uuid = null;
+      state.work.panel_id = run_info.panel_id;
       state.work.run_id = run_info.run_id;
       ipcRenderer.send('cmd-run', run_info.run_id);
     },
@@ -101,8 +118,8 @@ ipcRenderer.on('sys-error', (_, msg) => {
 });
 
 //系统输出信息
-ipcRenderer.on('sys-info', (_, msg, msg_type) => {
-  _store.commit('udpateSyslog', {type: msg_type, msg: msg});
+ipcRenderer.on('sys-info', (_, time, msg, msg_type) => {
+  _store.commit('updateSyslog', {time: Math.floor(time/1000/1000), type: msg_type, msg: msg});
 });
 
 //数据记录输出

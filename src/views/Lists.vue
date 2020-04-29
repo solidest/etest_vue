@@ -47,7 +47,6 @@
 
 <script>
     export default {
-        name: 'home',
         created: function () {
             this.items = this.$store.getters.getConfig('lists');
         },

@@ -13,8 +13,11 @@
     </v-treeview>
 </template>
 <script>
+    /**
+     * 主树结构组件，可定制图标
+     */
     export default {
-        name: 'dev-tree',
+        name: 'tree-main',
         props: ['config'],
 
         data: () => {

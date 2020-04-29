@@ -4,3 +4,4 @@ memos:
 - ETestVue是ETestDev的UI组件库，采用前端框架VUE进行开发
 - ETestVue中的组件已全部与ETest执行器绑定，开箱即用
 - ETestVue中的组件全部采用配置文件的方式进行定制
+- ETestVue中的组件全部支持触控操作
