@@ -47,7 +47,27 @@ Vue.use(VueRouter)
     path: '/inputform',
     name: 'InputForm',
     component: () => import(/* webpackChunkName: "inputform" */ '../views/InputForm.vue')
-  }
+  },
+  {
+    path: '/diagnosis_all',
+    name: 'DiagnosisAll',
+    component: Home
+  },
+  {
+    path: '/diagnosis_1',
+    name: 'Diagnosis1',
+    component: Home
+  },
+  {
+    path: '/diagnosis_2',
+    name: 'Diagnosis2',
+    component: Home
+  },
+  {
+    path: '/diagnosis_3',
+    name: 'Diagnosis3',
+    component: Home
+  },
 ]
 
 const router = new VueRouter({

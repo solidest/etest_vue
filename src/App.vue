@@ -1,8 +1,6 @@
 <template>
   <v-app id="etest-vue">
-
     <v-app-bar dark app height="80" color="primary">
-
       <v-tabs icons-and-text v-model="sel" @change="onChange" show-arrows>
         <v-tab v-for="tab in tabs" :key="tab.id">
           {{ tab.title }}
@@ -10,6 +8,24 @@
         </v-tab>
       </v-tabs>
       <v-spacer />
+
+      <v-menu offset-x bottom left>
+        <template v-slot:activator="{ on }">
+          <v-fab-transition>
+            <v-btn color="cyan darken-1" absolute bottom right fab v-on="on" v-show="subs.length>0">
+              <v-icon>mdi-menu</v-icon>
+            </v-btn>
+          </v-fab-transition>
+        </template>
+
+        <v-list>
+          <v-list-item v-for="(item) in subs" :key="item.id" @click="gotoSub(item)"
+            :disabled="item.router===$route.name">
+            <v-list-item-title>{{ item.name }}</v-list-item-title>
+          </v-list-item>
+        </v-list>
+      </v-menu>
+
     </v-app-bar>
 
     <v-snackbar bottom :timeout="touts" :color="tip_color" v-model="tip">
@@ -60,7 +76,8 @@
       return {
         sel: 0,
         tabs: null,
-        tab: null
+        tab: null,
+        subs: []
       }
     },
 
@@ -95,6 +112,32 @@
     },
 
     methods: {
+
+      //切换子模块
+      gotoSub: function (item) {
+        if (item.router) {
+          this.$router.push({
+            name: item.router
+          });
+        }
+      },
+
+      //加载子模块
+      loadSub: function (tab) {
+        if (!tab.children) {
+          this.subs.length = 0;
+          return;
+        }
+        for (let c of tab.children) {
+          this.subs.push(c);
+        }
+        if (this.subs.length > 0) {
+          this.gotoSub(this.subs[0]);
+        }
+
+      },
+
+      //切换主模块
       onChange: function (idx) {
         this.tab = this.tabs[idx];
         if (!this.tab) {
@@ -114,11 +157,13 @@
         } else {
           let rt = this.tab.router;
           if (!rt) {
-            return;
+            this.loadSub(this.tab);
+          } else {
+            this.subs.length = 0;
+            this.$router.push({
+              name: rt
+            });
           }
-          this.$router.push({
-            name: rt
-          });
         }
         // let self = this;
         // this.$nextTick(() => {
