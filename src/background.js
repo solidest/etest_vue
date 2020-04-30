@@ -31,10 +31,23 @@ function createWindow() {
       nodeIntegration: true
     },
     fullscreen: true,
-    simpleFullscreen: true,
+    //simpleFullscreen: true,
     show: false,
     frame: false,
-  })
+  });
+
+  globalShortcut.register('CommandOrControl+Q', () => {
+    app.quit();
+  });
+  globalShortcut.register('CommandOrControl+Alt+I', () => {
+    win.webContents.isDevToolsOpened() ? win.webContents.closeDevTools() : win.webContents.openDevTools()
+  });
+  globalShortcut.register('CommandOrControl+R', () => {
+    win.webContents.reload();
+  });
+  Menu.setApplicationMenu(null);
+  sdk.setup(win);
+  // win.show();
 
   if (process.env.WEBPACK_DEV_SERVER_URL) {
     // Load the url of the dev server if in development mode
@@ -47,17 +60,6 @@ function createWindow() {
   }
 
   win.once('ready-to-show', () => {
-    globalShortcut.register('CommandOrControl+Q', () => {
-        app.quit();
-    });
-    globalShortcut.register('CommandOrControl+Alt+I', () => {
-      win.webContents.isDevToolsOpened() ? win.webContents.closeDevTools() : win.webContents.openDevTools()
-    });
-    globalShortcut.register('CommandOrControl+R', () => {
-      win.webContents.reload();
-    });
-    Menu.setApplicationMenu(null);
-    sdk.setup(win);
     win.show();
   });
 
