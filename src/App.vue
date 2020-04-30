@@ -48,7 +48,9 @@
     },
     
     mounted: function() {
-      this.$router.push({name: 'Home'});
+      if(this.$route.path !== '/') {
+        this.$router.push({name: 'Home'});
+      }
     },
 
     data: () => {
