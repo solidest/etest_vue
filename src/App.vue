@@ -46,6 +46,10 @@
       this.tabs = cfg.tabs;
       this.tab = this.tabs[0];
     },
+    
+    mounted: function() {
+      this.$router.push({name: 'Home'});
+    },
 
     data: () => {
       return {

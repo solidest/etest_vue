@@ -1,9 +1,10 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
 import {ipcRenderer, remote, shell} from 'electron';
-const fs = require('fs');
+import fs from 'fs';
 import yaml from 'js-yaml';
 import OutParser from '../feature/parse_out';
+import path from 'path';
 
 
 Vue.use(Vuex);
@@ -97,7 +98,7 @@ const _store = new  Vuex.Store({
   },
   getters: {
     getConfig: () => (id) => {
-      let f = 'static/config/' + id + '.yml';
+      let f = path.join(__static, 'config/' + id + '.yml');
       return yaml.safeLoad(fs.readFileSync(f, 'utf8'));
     }
   },

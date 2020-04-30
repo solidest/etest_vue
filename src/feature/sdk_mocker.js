@@ -4,6 +4,7 @@ const {
     ipcMain
 } = require('electron');
 const fs = require('fs');
+const path = require('path');
 
 let _db = null;
 let _run_uuid = null;
@@ -123,12 +124,12 @@ function _start_tick() {
 
 //初始化数据库
 function _loaddb(run_id) {
-    let fdb = 'static/logdb/' + run_id + '.json';
-    if (!fs.existsSync(fdb)) {
+    let f = path.join(__static, '/logdb/' + run_id + '.json');
+    if (!fs.existsSync(f)) {
         send_sys_err('没有找到run_id:' + run_id);
         return null;
     }
-    return new lokijs(fdb, {
+    return new lokijs(f, {
         autoloadCallback: () => {
             setTimeout(_start_tick, 40);
         },
