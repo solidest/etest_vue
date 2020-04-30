@@ -55,3 +55,7 @@ tabs:
   id: help
   icon: mdi-book-open-outline
   readme: 开发帮助手册
+- title: 退出
+  id: exit
+  icon: mdi-exit-run
+  readme: 退出程序

@@ -1,26 +1,23 @@
 <template>
   <v-app id="etest-vue">
 
-    <v-snackbar bottom :timeout="touts" :color="tip_color" v-model="tip">
-      {{ tip_msg }}
-      <v-btn icon small @click="tip=false">
-        <v-icon>mdi-close</v-icon>
-      </v-btn>
-    </v-snackbar>
     <v-app-bar dark app height="80" color="primary">
 
-      <v-tabs icons-and-text v-model="sel" @change="onChange">
+      <v-tabs icons-and-text v-model="sel" @change="onChange" show-arrows>
         <v-tab v-for="tab in tabs" :key="tab.id">
           {{ tab.title }}
           <v-icon>{{tab.icon}}</v-icon>
         </v-tab>
       </v-tabs>
       <v-spacer />
+    </v-app-bar>
 
-      <v-btn icon @click="onClose" class="mr-2">
+    <v-snackbar bottom :timeout="touts" :color="tip_color" v-model="tip">
+      {{ tip_msg }}
+      <v-btn icon small @click="tip=false">
         <v-icon>mdi-close</v-icon>
       </v-btn>
-    </v-app-bar>
+    </v-snackbar>
     <v-content>
       <router-view></router-view>
     </v-content>
@@ -99,15 +96,16 @@
     },
 
     methods: {
-      onClose: function () {
-        this.$store.commit('cmdExit');
-      },
       onChange: function (idx) {
         this.tab = this.tabs[idx];
         if (!this.tab) {
           return;
         }
-        if (this.tab && this.tab.id === 'help') {
+        if(this.tab.id === 'exit') {
+          this.$store.commit('cmdExit');
+          return;
+        }
+        if (this.tab.id === 'help') {
           let self = this;
           this.$nextTick(() => {
             self.sel = 0;
