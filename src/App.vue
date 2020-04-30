@@ -26,13 +26,18 @@
     </v-content>
 
     <v-footer app color="accent">
-  
+
       <span>凯云科技 &copy; 2020</span>
 
     </v-footer>
 
   </v-app>
 </template>
+<style>
+  ::-webkit-scrollbar {
+    display: none;
+  }
+</style>
 
 <script>
   export default {
@@ -46,10 +51,12 @@
       this.tabs = cfg.tabs;
       this.tab = this.tabs[0];
     },
-    
-    mounted: function() {
-      if(this.$route.path !== '/') {
-        this.$router.push({name: 'Home'});
+
+    mounted: function () {
+      if (this.$route.path !== '/') {
+        this.$router.push({
+          name: 'Home'
+        });
       }
     },
 
@@ -75,7 +82,7 @@
       },
       tip_color: function () {
         let c = this.$store.state.last_tip.tip_type;
-        if(c==='info') {
+        if (c === 'info') {
           return 'grey darken-1';
         } else {
           return c;
@@ -109,7 +116,7 @@
           this.$store.commit('cmdOpen', 'https://solidest.github.io/etest_sdk/#/');
         } else {
           let rt = this.tab.router;
-          if(!rt) {
+          if (!rt) {
             return;
           }
           this.$router.push({
