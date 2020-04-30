@@ -23,9 +23,8 @@
     </v-content>
 
     <v-footer app color="accent">
-
-      <span>凯云科技 &copy; 2020</span>
-
+      <span v-if="tab && tab.readme">{{tab.readme}} </span>
+      <span class="ml-2"> &copy; 凯云科技 &copy; 2020</span>
     </v-footer>
 
   </v-app>
@@ -101,7 +100,7 @@
         if (!this.tab) {
           return;
         }
-        if(this.tab.id === 'exit') {
+        if (this.tab.id === 'exit') {
           this.$store.commit('cmdExit');
           return;
         }
@@ -121,10 +120,10 @@
             name: rt
           });
         }
-        let self = this;
-        this.$nextTick(() => {
-          self.$store.commit('setMsgInfo', this.tab.readme);
-        });
+        // let self = this;
+        // this.$nextTick(() => {
+        //   self.$store.commit('setMsgInfo', this.tab.readme);
+        // });
       },
     }
   }
