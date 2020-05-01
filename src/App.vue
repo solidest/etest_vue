@@ -126,8 +126,8 @@
       //加载子模块
       loadSub: function () {
         let tab = this.tab;
+        this.subs.length = 0;
         if (!tab || !tab.children) {
-          this.subs.length = 0;
           return;
         }
         for (let c of tab.children) {
@@ -149,6 +149,7 @@
           this.$store.commit('cmdExit');
           return;
         }
+
         if (this.tab.id === 'help') {
           let self = this;
           this.$nextTick(() => {
@@ -158,19 +159,14 @@
           this.$store.commit('cmdOpen', 'https://solidest.github.io/etest_sdk/#/');
         } else {
           let rt = this.tab.router;
-          if (!rt) {
-            this.loadSub();
-          } else {
+          if (rt) {
             this.subs.length = 0;
             this.$router.push({
               name: rt
             });
           }
         }
-        // let self = this;
-        // this.$nextTick(() => {
-        //   self.$store.commit('setMsgInfo', this.tab.readme);
-        // });
+        this.loadSub();
       },
     }
   }

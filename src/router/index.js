@@ -77,6 +77,47 @@ Vue.use(VueRouter)
     component: () => import(/* webpackChunkName: "echartone" */ '../views/EChartOne.vue'),
     props: { chart_key: 'diagnosis4' }
   },
+  {
+    path: '/zoom_data',
+    name: 'Zoom_data',
+    component: () => import(/* webpackChunkName: "zoomdata" */ '../views/EZoomData.vue'),
+  },
+  {
+    path: '/analysis_base',
+    name: 'Analysis_base',
+    component: () => import(/* webpackChunkName: "echartone" */ '../views/EChartOne.vue'),
+    props: { chart_key: 'analysis_base'}
+  },
+  {
+    path: '/analysis_histogram',
+    name: 'Analysis_histogram',
+    component: () => import(/* webpackChunkName: "analysis_histogram" */ '../views/EAnalysisHistogram.vue'),
+  },
+  {
+    path: '/analysis_clustering',
+    name: 'Analysis_clustering',
+    component: () => import(/* webpackChunkName: "analysis_clustering" */ '../views/EAnalysisClustering.vue'),
+  },
+  {
+    path: '/analysis_regression1',
+    name: 'Analysis_regression1',
+    component: () => import(/* webpackChunkName: "analysis_regression1" */ '../views/EAnalysisRegression1.vue'),
+  },
+  {
+    path: '/analysis_regression2',
+    name: 'Analysis_regression2',
+    component: () => import(/* webpackChunkName: "analysis_regression2" */ '../views/EAnalysisRegression2.vue'),
+  },
+  {
+    path: '/analysis_regression3',
+    name: 'Analysis_regression3',
+    component: () => import(/* webpackChunkName: "analysis_regression3" */ '../views/EAnalysisRegression3.vue'),
+  },
+  {
+    path: '/analysis_regression4',
+    name: 'Analysis_regression4',
+    component: () => import(/* webpackChunkName: "analysis_regression4" */ '../views/EAnalysisRegression4.vue'),
+  },
 ]
 
 const router = new VueRouter({

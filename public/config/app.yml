@@ -27,6 +27,31 @@ tabs:
   id: analysis
   icon: mdi-function-variant
   readme: 数据分析组件：用于对采集数据进行穿透查询或数据分析
+  children:
+  - id: zoom_data
+    name: 数据缩放
+    router: Zoom_data
+  - id: analysis_base
+    name: 基本统计
+    router: Analysis_base
+  - id: analysis_histogram
+    name: 分布直方图
+    router: Analysis_histogram
+  - id: analysis_clustering
+    name: 聚类分析
+    router: Analysis_clustering
+  - id: analysis_regression1
+    name: 线性回归
+    router: Analysis_regression1
+  - id: analysis_regression2
+    name: 指数回归
+    router: Analysis_regression2
+  - id: analysis_regression3
+    name: 对数回归
+    router: Analysis_regression3
+  - id: analysis_regression4
+    name: 多项式回归
+    router: Analysis_regression4
 - title: 故障诊断
   id: diagnosis
   icon: mdi-cloud-search-outline
