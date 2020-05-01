@@ -68,6 +68,7 @@
         methods: {
             loadTree: function() {
                 let td = new SankeyData();
+                //td.pushTree(this.$store.getters.getConfig('diagnosis1').series[0].data);
                 td.pushTree(this.$store.getters.getConfig('diagnosis2').series[0].data);
                 td.pushTree(this.$store.getters.getConfig('diagnosis3').series[0].data);
                 td.pushTree(this.$store.getters.getConfig('diagnosis4').series[0].data);
