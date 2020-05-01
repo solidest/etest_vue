@@ -51,22 +51,31 @@ Vue.use(VueRouter)
   {
     path: '/diagnosis_all',
     name: 'DiagnosisAll',
-    component: Home
+    component: () => import(/* webpackChunkName: "sankey" */ '../views/ESankey.vue')
   },
   {
     path: '/diagnosis_1',
     name: 'Diagnosis1',
-    component: Home
+    component: () => import(/* webpackChunkName: "echartone" */ '../views/EChartOne.vue'),
+    props: { chart_key: 'diagnosis1' }
   },
   {
     path: '/diagnosis_2',
     name: 'Diagnosis2',
-    component: Home
+    component: () => import(/* webpackChunkName: "echartone" */ '../views/EChartOne.vue'),
+    props: { chart_key: 'diagnosis2' }
   },
   {
     path: '/diagnosis_3',
     name: 'Diagnosis3',
-    component: Home
+    component: () => import(/* webpackChunkName: "echartone" */ '../views/EChartOne.vue'),
+    props: { chart_key: 'diagnosis3' }
+  },
+  {
+    path: '/diagnosis_4',
+    name: 'Diagnosis4',
+    component: () => import(/* webpackChunkName: "echartone" */ '../views/EChartOne.vue'),
+    props: { chart_key: 'diagnosis4' }
   },
 ]
 

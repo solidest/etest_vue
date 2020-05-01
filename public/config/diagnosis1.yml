@@ -1,0 +1,42 @@
+---
+tooltip:
+  trigger: item
+  triggerOn: mousemove
+series:
+- type: tree
+  data:
+  - name: 无打瓶驱动信号
+    value: 10
+    children:
+    - name: 接口电路异常
+      value: 30
+      children:
+      - name: 火警输入电路异常
+        value: 60
+      - name: 驱动输出电路异常
+        value: 40
+    - name: 输出线束异常
+      value: 50
+      children:
+      - name: 线束断路
+        value: 80
+      - name: 焊接接触不良
+        value: 20
+  top: 1%
+  left: 20%
+  bottom: 1%
+  right: 20%
+  symbolSize: 7
+  label:
+    position: left
+    verticalAlign: middle
+    align: right
+    fontSize: 20
+  leaves:
+    label:
+      position: right
+      verticalAlign: middle
+      align: left
+  expandAndCollapse: true
+  animationDuration: 550
+  animationDurationUpdate: 750

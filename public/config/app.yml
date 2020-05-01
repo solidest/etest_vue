@@ -30,20 +30,23 @@ tabs:
 - title: 故障诊断
   id: diagnosis
   icon: mdi-cloud-search-outline
-  readme: 故障诊断组件：最左端为故障现象顶事件；最右端为故障原因底事件，与测试程序绑定后可实现故障自动诊断
+  readme: 故障诊断组件：最左端为故障现象顶事件，最右端为故障原因底事件，通过绑定测试程序实现自动诊断
   children:
   - id: diagnosis_all
-    name: 全部故障模型树
+    name: 全部诊断模型
     router: DiagnosisAll
   - id: diagnosis_1
-    name: 故障模型树1
-    router: Diagnosis1
-  - id: diagnosis_2
-    name: 故障模型树2
+    name: 故障1诊断模型
     router: Diagnosis2
-  - id: diagnosis_3
-    name: 故障模型树3
+  - id: diagnosis_2
+    name: 故障2诊断模型
     router: Diagnosis3
+  - id: diagnosis_3
+    name: 故障3诊断模型
+    router: Diagnosis4
+  - id: diagnosis_4
+    name: demo
+    router: Diagnosis1
 - title: 输入表单
   id: inputform
   icon: mdi-form-select

@@ -70,6 +70,7 @@
           name: 'Home'
         });
       }
+      this.loadSub();
     },
 
     data: () => {
@@ -123,8 +124,9 @@
       },
 
       //加载子模块
-      loadSub: function (tab) {
-        if (!tab.children) {
+      loadSub: function () {
+        let tab = this.tab;
+        if (!tab || !tab.children) {
           this.subs.length = 0;
           return;
         }
@@ -157,7 +159,7 @@
         } else {
           let rt = this.tab.router;
           if (!rt) {
-            this.loadSub(this.tab);
+            this.loadSub();
           } else {
             this.subs.length = 0;
             this.$router.push({

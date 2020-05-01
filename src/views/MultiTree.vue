@@ -2,7 +2,7 @@
   <v-container fluid fill-height>
     <div style="width:30%">
     </div>
-    <v-card outlined width="40%" height="100%">
+    <v-card outlined width="50%" height="100%">
       <run-tree :items="run_tree" :allow_play="!running" :updated_id="updated_id" @selected="onSelected" />
     </v-card>
 

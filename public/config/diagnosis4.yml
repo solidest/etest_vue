@@ -1,0 +1,55 @@
+---
+tooltip:
+  trigger: item
+  triggerOn: mousemove
+series:
+- type: tree
+  data:
+  - name: 故障现象3
+    value: 10
+    children:
+    - name: 子系统A异常
+      value: 50
+      children:
+      - name: 故障原因1
+        value: 20
+      - name: 故障原因2
+        value: 20
+    - name: 子系统B异常
+      value: 45
+      children:
+      - name: 故障原因5
+        value: 20
+      - name: 故障原因10
+        value: 19
+      - name: 故障原因13
+        value: 20
+    - name: 子系统C异常
+      value: 30
+      children:
+      - name: 故障原因8
+        value: 9
+      - name: 故障原因12
+        value: 75
+      - name: 故障原因14
+        value: 101
+      - name: 故障原因15
+        value: 98
+  top: 1%
+  left: 20%
+  bottom: 1%
+  right: 20%
+  symbolSize: 7
+  label:
+    position: left
+    verticalAlign: middle
+    align: right
+    fontSize: 20
+  leaves:
+    label:
+      position: right
+      verticalAlign: middle
+      align: left
+  expandAndCollapse: true
+  animationDuration: 550
+  animationDurationUpdate: 750
