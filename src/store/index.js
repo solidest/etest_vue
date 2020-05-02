@@ -49,17 +49,21 @@ const _store = new  Vuex.Store({
     setParam: function(state, pv) {
       state.params[pv.param] = pv.value;
     },
+
+    //切换到新的面板上
     updatePanel: function(state, id) {
       if(state.work.panel_id === id) {
         return;
       }
       state.work.panel_id = id;
-      state.params = {};
-      state.syslogs = [];
-      state.records = [];
-      state.work.run_uuid = null;
       state.work.run_id = null;
+      state.work.run_logs = null;
+      state.work.last_result = null;
+      state.params = {};
+      state.records = [];
     },
+
+    //更新下位机工作状态
     updateWorkState: function (state, work) {
       state.work.run_state = work.run_state;
       if(work.run_uuid){
@@ -69,19 +73,17 @@ const _store = new  Vuex.Store({
         state.work.last_result = state.work.run_logs.lastResut();
       }
     },
+
+    //更新下位机系统输出
     updateSyslog: function(state, log) {
       let logs = state.work.run_logs;
       if(logs) {
         logs.pushLog(log);
-      } else {
-        state.last_tip.tip_msg = '内部错误1';
-        state.last_tip.tip_type = 'error';
-        state.last_tip.tip = true;
       }
     },
-    updateRecord: function(state, rcds) {
-      //console.log('updateRecord', rcds.length)
 
+    //更新下位机上传记录
+    updateRecord: function(state, rcds) {
       let _rcds = state.records;
       for(let r of rcds) {
         _rcds.push(r);
@@ -93,26 +95,42 @@ const _store = new  Vuex.Store({
         }
       }
     },
+
+    //执行用例
     cmdRun: function(state, run_info) {
-      state.syslogs = [];
       state.records = [];
-      state.work.run_uuid = null;
       if(state.work.panel_id!==run_info.panel_id) {
-        state.work.panel_id = run_info.panel_id;
         state.params = {};
+        state.work.panel_id = run_info.panel_id;
       }
+      state.work.run_logs = null;
+      state.work.last_result = null;
       state.work.run_id = run_info.run_id;
       ipcRenderer.send('cmd-run', run_info.run_id, state.params);
     },
-    cmdCommand: function() {
-      //ipcRenderer.send('cmd-stop');
+
+    //执行命令
+    cmdCommand: function(state, cmd_info) {
+      if(!state.work.run_logs || state.work.panel_id!==cmd_info.panel_id) {
+        state.last_tip.tip_msg = '内部错误2';
+        state.last_tip.tip_type = 'error';
+        state.last_tip.tip = true;
+        return;
+      }
+      ipcRenderer.send('cmd-command', state.work.run_log.run_uuid, cmd_info.command, state.params);
     },
+
+    //停止下位机执行
     cmdStop: function() {
       ipcRenderer.send('cmd-stop');
     },
+
+    //退出应用
     cmdExit: function() {
       remote.app.quit();
     },
+
+    //打开url
     cmdOpen: function(_, url) {
       shell.openExternal(url);
     },

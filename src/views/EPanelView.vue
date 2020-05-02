@@ -13,7 +13,7 @@
         props: ['panel_id'],
 
         components: {
-            'epanel': () => import( /* webpackChunkName: "epanel" */ '../components/EPanel'),
+            'epanel': () => import( /* webpackChunkName: "epanel" */ '../components/EWidgets/EPanel'),
         },
 
         data: () => {

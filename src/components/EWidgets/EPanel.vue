@@ -19,22 +19,25 @@
     export default {
         props: ['panel_id', 'config'],
         created: function() {
-            this.$store.commit('updatePanel', this.panel_id)  
+            this.$store.commit('updatePanel', this.panel_id)
         },
         mounted: function() {
             if(this.config.autorun) {
                 let self = this;
+                this.$store.commit('cmdStop');
+                
                 setTimeout(()=>{
                     this.$store.commit('cmdRun', {panel_id: self.panel_id, run_id: self.config.autorun});
-                }, 500);
+                }, 300);
             }
         },
         components: {
             'GridLayout': VueGridLayout.GridLayout,
             'GridItem': VueGridLayout.GridItem,
-            'e-empty': () => import( /* webpackChunkName: "eemtpy" */ '../components/EEmpty'),
-            'e-lamp': () => import( /* webpackChunkName: "elamp" */ '../components/ELamp'),
-            'e-switch': () => import( /* webpackChunkName: "eswitch" */ '../components/ESwitch'),
+            'e-empty': () => import( /* webpackChunkName: "eemtpy" */ './EEmpty'),
+            'e-lamp': () => import( /* webpackChunkName: "elamp" */ './ELamp'),
+            'e-switch': () => import( /* webpackChunkName: "eswitch" */ './ESwitch'),
+            'e-button': () => import( /* webpackChunkName: "eswitch" */ './EButton'),
         },
     }
 </script>

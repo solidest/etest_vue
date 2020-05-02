@@ -2,6 +2,9 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 
+import ESankey from '../views/ESankey.vue' 
+import EChartOne from '../views/EChartOne.vue'
+
 Vue.use(VueRouter)
 
   const routes = [
@@ -51,30 +54,30 @@ Vue.use(VueRouter)
   {
     path: '/diagnosis_all',
     name: 'DiagnosisAll',
-    component: () => import(/* webpackChunkName: "sankey" */ '../views/ESankey.vue')
+    component: ESankey,
   },
   {
     path: '/diagnosis_1',
     name: 'Diagnosis1',
-    component: () => import(/* webpackChunkName: "echartone" */ '../views/EChartOne.vue'),
+    component: EChartOne,
     props: { chart_key: 'diagnosis1' }
   },
   {
     path: '/diagnosis_2',
     name: 'Diagnosis2',
-    component: () => import(/* webpackChunkName: "echartone" */ '../views/EChartOne.vue'),
+    component: EChartOne,
     props: { chart_key: 'diagnosis2' }
   },
   {
     path: '/diagnosis_3',
     name: 'Diagnosis3',
-    component: () => import(/* webpackChunkName: "echartone" */ '../views/EChartOne.vue'),
+    component: EChartOne,
     props: { chart_key: 'diagnosis3' }
   },
   {
     path: '/diagnosis_4',
     name: 'Diagnosis4',
-    component: () => import(/* webpackChunkName: "echartone" */ '../views/EChartOne.vue'),
+    component: EChartOne,
     props: { chart_key: 'diagnosis4' }
   },
   {
@@ -85,7 +88,7 @@ Vue.use(VueRouter)
   {
     path: '/analysis_base',
     name: 'Analysis_base',
-    component: () => import(/* webpackChunkName: "echartone" */ '../views/EChartOne.vue'),
+    component: EChartOne,
     props: { chart_key: 'analysis_base'}
   },
   {
