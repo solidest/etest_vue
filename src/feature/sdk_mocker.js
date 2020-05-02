@@ -5,6 +5,7 @@ const {
 } = require('electron');
 const fs = require('fs');
 const path = require('path');
+const demo = require('./demo');
 
 let _db = null;
 let _run_uuid = null;
@@ -147,7 +148,11 @@ function stop() {
 }
 
 //执行用例
-function run(_, run_id) {
+function run(_, run_id, params) {
+
+    if(demo[run_id]) {
+        return demo[run_id](params, send_records);
+    }
 
     if (_run_uuid) {
         return send_sys_err('ETest正在执行');

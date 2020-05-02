@@ -25,7 +25,7 @@ tabs:
   readme: 实时监控组件：用于实时监控用例执行状态，可任意组合搭配使用
   children:
   - id: panel1
-    name: 开关、指示灯、控制按钮
+    name: 开关、状态指示、按钮
     router: Epanel_view1
   - id: panel2
     name: 仪表盘

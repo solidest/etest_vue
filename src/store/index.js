@@ -24,6 +24,7 @@ const _store = new  Vuex.Store({
       last_result: null,
     },
     records: [],
+    params: {},
   },
   mutations: {
     setMsgInfo: function (state, msg) {
@@ -44,6 +45,20 @@ const _store = new  Vuex.Store({
     clearMsg: function (state) {
       state.last_tip.tip_msg = '$'
       state.last_tip.tip = false
+    },
+    setParam: function(state, pv) {
+      state.params[pv.param] = pv.value;
+    },
+    updatePanel: function(state, id) {
+      if(state.work.panel_id === id) {
+        return;
+      }
+      state.work.panel_id = id;
+      state.params = {};
+      state.syslogs = [];
+      state.records = [];
+      state.work.run_uuid = null;
+      state.work.run_id = null;
     },
     updateWorkState: function (state, work) {
       state.work.run_state = work.run_state;
@@ -71,7 +86,7 @@ const _store = new  Vuex.Store({
       for(let r of rcds) {
         _rcds.push(r);
       }
-      let rmc = _rcds.length-5000;  //最多保留5000条记录
+      let rmc = _rcds.length-20000;  //最多保留20000条记录
       if(rmc>0) {
         while (rmc-- > 0) {
           _rcds.shift();
@@ -82,9 +97,15 @@ const _store = new  Vuex.Store({
       state.syslogs = [];
       state.records = [];
       state.work.run_uuid = null;
-      state.work.panel_id = run_info.panel_id;
+      if(state.work.panel_id!==run_info.panel_id) {
+        state.work.panel_id = run_info.panel_id;
+        state.params = {};
+      }
       state.work.run_id = run_info.run_id;
-      ipcRenderer.send('cmd-run', run_info.run_id);
+      ipcRenderer.send('cmd-run', run_info.run_id, state.params);
+    },
+    cmdCommand: function() {
+      //ipcRenderer.send('cmd-stop');
     },
     cmdStop: function() {
       ipcRenderer.send('cmd-stop');
@@ -100,6 +121,9 @@ const _store = new  Vuex.Store({
     getConfig: () => (id) => {
       let f = path.join(__static, 'config/' + id + '.yml');
       return yaml.safeLoad(fs.readFileSync(f, 'utf8'));
+    },
+    lastRecord: state => {
+      return state.records.length===0 ? {} : state.records[state.records.length-1];
     }
   },
   actions: {
