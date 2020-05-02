@@ -13,8 +13,6 @@
   import tman from '../feature/TreeMan';
 
   export default {
-    name: 'runtree',
-
     components: {
       'run-tree': () => import( /* webpackChunkName: "runtree" */ '../components/RunTree'),
     },

@@ -118,6 +118,24 @@ Vue.use(VueRouter)
     name: 'Analysis_regression4',
     component: () => import(/* webpackChunkName: "analysis_regression4" */ '../views/EAnalysisRegression4.vue'),
   },
+  {
+    path: '/epanel_view1',
+    name: 'Epanel_view1',
+    component: () => import(/* webpackChunkName: "epanel_view" */ '../views/EPanelView.vue'),
+    props: { panel_id: "panels/panel1" }
+  },
+  {
+    path: '/epanel_view2',
+    name: 'Epanel_view2',
+    component: () => import(/* webpackChunkName: "epanel_view" */ '../views/EPanelView.vue'),
+    props: { panel_id: "panels/panel2" }
+  },
+  {
+    path: '/epanel_view3',
+    name: 'Epanel_view3',
+    component: () => import(/* webpackChunkName: "epanel_view" */ '../views/EPanelView.vue'),
+    props: { panel_id: "panels/panel3" }
+  },
 ]
 
 const router = new VueRouter({

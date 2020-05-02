@@ -3,7 +3,7 @@
         <v-row>
             <!-- <div style="width: 500px; height: 460px;" id="_sankey_" /> -->
 
-            <v-card outlined width="80%" height="600px" class="mx-auto pa-4" id="_sankey_">
+            <v-card outlined width="80%" height="800px" class="mx-auto pa-4" id="_sankey_">
             </v-card>
         </v-row>
     </v-container>

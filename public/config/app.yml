@@ -19,21 +19,46 @@ tabs:
   icon: mdi-play-box-outline
   readme: 用例执行组件：包含执行控制按钮、执行输出两个独立的组件
   router: Runsingle
-- title: 实时监视
+- title: 实时监控
   id: watcher
   icon: mdi-chart-bell-curve
-  readme: 实时监视组件：用于实时监视用例执行状态数据，可任意组合搭配使用
+  readme: 实时监控组件：用于实时监控用例执行状态，可任意组合搭配使用
+  children:
+  - id: panel1
+    name: 开关、指示灯、控制按钮
+    router: Epanel_view1
+  - id: panel2
+    name: 仪表盘
+    router: Epanel_view2
+  - id: panel3
+    name: 折线
+    router: Epanel_view3
+  - id: panel4
+    name: 散点
+    router: Epanel_view4
+  - id: panel5
+    name: 三维坐标
+    router: Epanel_view5
+  - id: panel6
+    name: 正弦波
+    router: Epanel_view6
+  - id: pael7
+    name: 方波
+    router: Epanel_view7
+  - id: panel8
+    name: 组合示例
+    router: Epanel_view8
 - title: 数据分析
   id: analysis
   icon: mdi-function-variant
   readme: 数据分析组件：用于对采集数据进行穿透查询或数据分析
   children:
-  - id: zoom_data
-    name: 数据缩放
-    router: Zoom_data
   - id: analysis_base
     name: 基本统计
     router: Analysis_base
+  - id: zoom_data
+    name: 数据缩放
+    router: Zoom_data
   - id: analysis_histogram
     name: 分布直方图
     router: Analysis_histogram
