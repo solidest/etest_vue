@@ -1,6 +1,6 @@
 <template>
     <v-container fluid>
-        <v-row v-for="(it, i) in vals" :key="i" align="center" class="spacer" no-gutters>
+        <v-row v-for="(it, i) in keyvs" :key="i" align="center" class="spacer" no-gutters>
             <v-avatar v-if="it.value" :color="option[i].oncolor||'red'" :size="option[i].size"
                 :style="option[i].ficker ? { animationDuration: '1s' } : null" class="ma-2 v-avatar--metronome">
                 <v-icon :dark="option[i].dark" :large="option[i].size && option[i].size>48"
@@ -44,19 +44,16 @@
         props: ['panel_id', 'option'],
 
         computed: {
-            rcd: function () {
+            rcds: function () {
                 if(this.$store.state.work.panel_id !== this.panel_id) {
-                    return {};
+                    return [];
                 }
-                let len = this.$store.state.records.length;
-                if(len===0) {
-                    return {};
-                }
-                return this.$store.state.records[len-1];
+                return this.$store.state.records;
             }
         },
         watch: {
-            rcd: function () {
+            rcds: function () {
+                //console.log('rcds')
                 this.updateData();
             },
             panel_id: function() {
@@ -68,35 +65,39 @@
         },
         data: () => {
             return {
-                vals: null
+                keyvs: [],
             }
         },
         methods: {
+            //初始化数据
             initData: function () {
-                let rcd = this.rcd;
-                this.vals = [];
+                this.keyvs.length = 0;
                 for (let opt of this.option) {
                     if (opt.key) {
-                        this.vals.push({
-                            key: opt.key,
-                            value: (rcd[opt.key] ? true : false)
+                        this.keyvs.push({
+                            key: opt.key
                         });
                     } else {
-                        this.vals.push({
+                        this.keyvs.push({
                             value: false
                         });
                     }
                 }
                 this.updateData();
             },
+
+            //刷新数据
             updateData: function () {
-                let rcd = this.rcd;
-                //console.log('lamp rcd', JSON.stringify(rcd));
-                for (let v of this.vals) {
-                    if (v.key && (v.key in rcd)) {
-                        v.value = rcd[v.key] ? true : false;
+                let rcds = this.rcds;
+                for(let r of rcds) {
+                    for (let v of this.keyvs) {
+                        if (v.key && (v.key in r)) {
+                            v.value = r[v.key] ? true : false;
+                        }
                     }
                 }
+                //console.log(this.keyvs)
+                this.$forceUpdate();
             }
         }
 

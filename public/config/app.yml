@@ -31,7 +31,7 @@ tabs:
     name: 仪表盘
     router: Epanel_view2
   - id: panel3
-    name: 折线
+    name: 线条
     router: Epanel_view3
   - id: panel4
     name: 散点

@@ -1,12 +1,16 @@
 
-debug: true
+# debug: true
 autorun: demo3
 layout:
     - {x: 0, y: 0, w: 6, h: 18, i: "chart1"}
     - {x: 6, y: 0, w: 6, h: 18, i: "chart2"}
+    - {x: 0, y: 19, w: 6, h: 18, i: "chart3"}
+    - {x: 6, y: 19, w: 6, h: 18, i: "chart4"}
 chart1:
     type: e-xy-chart
     option:
+        maxCount: 2000
+        redrawTime: 210
         title:
             text: 波形图
             left: center
@@ -35,6 +39,8 @@ chart1:
 chart2:
     type: e-xy-chart
     option:
+        maxCount: 20
+        redrawTime: 510
         title:
             text: 普通折线
             left: center
@@ -57,6 +63,67 @@ chart2:
             type: line
             showSymbol: false
             hoverAnimation: false
+            encode:
+                x: $time
+                y: v1
+chart3:
+    type: e-xy-chart
+    option:
+        maxCount: 12
+        redrawTime: 330
+        title:
+            text: 阶梯线
+            left: center
+        tooltip:
+            trigger: axis
+            axisPointer:
+                animation: false
+        xAxis:
+            type: value
+            min: dataMin
+            max: dataMax
+            splitLine:
+                show: false
+        yAxis:
+            type: value
+
+        series:
+        -   name: 模拟数据
+            type: line
+            showSymbol: false
+            hoverAnimation: false
+            step: start
+            encode:
+                x: $time
+                y: v3
+chart4:
+    type: e-xy-chart
+    option:
+        maxCount: 20
+        redrawTime: 550
+        title:
+            text: 平滑曲线
+            left: center
+        tooltip:
+            trigger: axis
+            axisPointer:
+                animation: false
+        xAxis:
+            type: value
+            min: dataMin
+            max: dataMax
+            splitLine:
+                show: false
+        yAxis:
+            type: value
+            splitLine:
+                show: false
+        series:
+        -   name: 模拟数据
+            type: line
+            showSymbol: false
+            hoverAnimation: false
+            smooth: true
             encode:
                 x: $time
                 y: v1

@@ -17,14 +17,22 @@ const _store = new  Vuex.Store({
       tip_type: 'info'
     },
     work: {
+      //下位机工作模式
       run_state: 'idle',
+      //日志解析器
       run_logs: null,
+      //用例id
       run_id: null,
+      //面板id
       panel_id: null,
+      //run_id的执行结果
       last_result: null,
     },
+    //最有一批刷新的数据
     records: [],
+    //执行输入参数
     params: {},
+    //正在重置中
     resetting: false
   },
   mutations: {
@@ -51,7 +59,7 @@ const _store = new  Vuex.Store({
       state.params[pv.param] = pv.value;
     },
 
-    //更新下位机工作状态
+    //下位机工作状态有变化
     updateWorkState: function (state, work) {
       //console.log('state', work);
       state.work.run_state = work.run_state;
@@ -66,7 +74,7 @@ const _store = new  Vuex.Store({
       }
     },
 
-    //更新下位机系统输出
+    //下位机输出系统信息
     updateSyslog: function(state, log) {
       if(state.resetting || state.work.run_state==='idle') {
         return;
@@ -77,18 +85,14 @@ const _store = new  Vuex.Store({
       }
     },
 
-    //更新下位机上传记录
+    //下位机上传了新记录
     updateRecord: function(state, rcds) {
       if(state.resetting || state.work.run_state==='idle') {
         //console.error('ignore updateRecord', JSON.stringify(rcds));
         return;
       }
-      //console.log('updateRecord', JSON.stringify(rcds));
-      state.records = state.records.concat(rcds);
-      let rmc = state.records.length-500;  //最多保留20000条记录
-      if(rmc>0) {
-        state.records.splice(0, rmc);
-      }
+      console.log('updateRecord')
+      state.records = rcds;
     },
 
     //重置

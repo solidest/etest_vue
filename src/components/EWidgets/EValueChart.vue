@@ -13,26 +13,23 @@
         props: ['panel_id', 'option'],
 
         mounted: function () {
-            this.refresh();
+            this.resetChart();
         },
         computed: {
-            rcd: function () {
+            rcds: function () {
                 if(this.$store.state.work.panel_id !== this.panel_id) {
-                    return {};
+                    return [];
                 }
-                let len = this.$store.state.records.length;
-                if(len===0) {
-                    return {};
-                }
-                return this.$store.state.records[len-1];
+                return this.$store.state.records;
             }
         },
         watch: {
-            rcd: function () {
+            rcds: function () {
+                //console.log('rcds')
                 this.updateData();
             },
             panel_id: function () {
-                this.refresh();
+                this.resetChart();
             }
         },
         data: () => {
@@ -43,8 +40,8 @@
             }
         },
         methods: {
-            //重新渲染界面
-            refresh: function () {
+            //重新设置界面
+            resetChart: function () {
                 if (this.chart) {
                     this.chart.clear();
                     this.chart = null;
@@ -54,13 +51,15 @@
                 for (let s of this.option.series) {
                     this.data_keys.push(s.data[0].key);
                 }
+                //console.log(this.data_keys)
 
                 let self = this;
                 //等待初始动画完毕后再初始化
                 setTimeout(() => {
                     self.chart = echarts.init(document.getElementById(self.chart_id));
-                    self.updateData();
-                }, 100);
+                    self.chart.setOption(self.option);
+                    // self.updateData();
+                }, 200);
             },
 
             //更新数据
@@ -68,12 +67,13 @@
                 if(!this.chart) {
                     return;
                 }
-                let rcd = this.rcd;
-                //console.log('updateData', JSON.stringify(rcd));
+                let rcds = this.rcds;
                 let len = this.data_keys.length
-                for (let i = 0; i < len; i++) {
-                    if (this.data_keys[i] in rcd) {
-                        this.option.series[i].data[0].value = rcd[this.data_keys[i]];
+                for(let r of rcds) {
+                    for (let i = 0; i < len; i++) {
+                        if (this.data_keys[i] in r) {
+                            this.option.series[i].data[0].value = r[this.data_keys[i]];
+                        }
                     }
                 }
                 this.chart.setOption(this.option);

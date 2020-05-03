@@ -32,7 +32,7 @@ function demo2(params, sender) {
         let sw = (Math.random()*2).toFixed(2) - 0;
         let yl = (Math.random()*2).toFixed(2) - 0;
         sender([{v_sd: sd, v_zs: zs, v_yl: yl, v_sw: sw}]);
-    }, 2000);
+    }, 1000);
 }
 
 
@@ -41,17 +41,18 @@ function demo3(_, sender) {
     let ms = 0;
     let v1 = 0;
     let v2 = 0;
-    let step = 0.05
+    let v3 = 0;
+    let step = 0.005
     timer = setInterval(()=>{
         let vs = [];
-        for(let i=0; i<4; i++) {
+        for(let i=0; i<40; i++) {
             let data = {$time: ms};
 
             //v1
-            // if(ms%100===0) {
+            if(ms%500===0) {
                 v1 = v1+Math.random()*21-10;
                 data.v1 = v1;               
-            // }
+            }
             
             //v2
             v2 += step;
@@ -60,9 +61,25 @@ function demo3(_, sender) {
                 step = -step;
             }
             data.v2 = _v2;
+
+            //v3
+            let _v3 = v3;
+            if(_v2>25) {
+                _v3 = 3;
+            } else if(_v2>0) {
+                _v3 = 2;
+            } else if(_v2>-25) {
+                _v3 = 1;
+            } else {
+                _v3 = 0;
+            }
+            if(_v3!==v3) {
+                v3 = _v3;
+                data.v3 = v3;
+            }
             
             vs.push(data);
-            ms += 10;
+            ms += 1;
         }
         sender(vs);
     }, 40);
