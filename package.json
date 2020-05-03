@@ -16,6 +16,7 @@
     "@mdi/font": "^5.1.45",
     "core-js": "^3.6.4",
     "echarts": "^4.7.0",
+    "echarts-gl": "^1.1.1",
     "js-yaml": "^3.13.1",
     "lokijs": "^1.5.8",
     "shortid": "^2.2.15",

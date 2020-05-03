@@ -39,15 +39,15 @@ tabs:
   - id: panel5
     name: 三维坐标
     router: Epanel_view5
-  - id: panel6
-    name: 正弦波
-    router: Epanel_view6
-  - id: pael7
-    name: 方波
-    router: Epanel_view7
-  - id: panel8
-    name: 组合示例
-    router: Epanel_view8
+  # - id: panel6
+  #   name: 正弦波
+  #   router: Epanel_view6
+  # - id: pael7
+  #   name: 方波
+  #   router: Epanel_view7
+  # - id: panel8
+  #   name: 组合示例
+  #   router: Epanel_view8
 - title: 数据分析
   id: analysis
   icon: mdi-function-variant

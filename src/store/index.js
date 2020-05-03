@@ -91,7 +91,7 @@ const _store = new  Vuex.Store({
         //console.error('ignore updateRecord', JSON.stringify(rcds));
         return;
       }
-      console.log('updateRecord')
+      // console.log('updateRecord')
       state.records = rcds;
     },
 

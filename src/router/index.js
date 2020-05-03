@@ -4,6 +4,7 @@ import Home from '../views/Home.vue'
 
 import ESankey from '../views/ESankey.vue' 
 import EChartOne from '../views/EChartOne.vue'
+import EPanelView from '../views/EPanelView.vue'
 
 Vue.use(VueRouter)
 
@@ -124,49 +125,48 @@ Vue.use(VueRouter)
   {
     path: '/epanel_view1',
     name: 'Epanel_view1',
-    component: () => import(/* webpackChunkName: "epanel_view" */ '../views/EPanelView.vue'),
+    component: EPanelView,
     props: { panel_id: "panels/panel1" }
   },
   {
     path: '/epanel_view2',
     name: 'Epanel_view2',
-    component: () => import(/* webpackChunkName: "epanel_view" */ '../views/EPanelView.vue'),
+    component: EPanelView,
     props: { panel_id: "panels/panel2" }
   },
   {
     path: '/epanel_view3',
     name: 'Epanel_view3',
-    component: () => import(/* webpackChunkName: "epanel_view" */ '../views/EPanelView.vue'),
+    component: EPanelView,
     props: { panel_id: "panels/panel3" }
   },
   {
     path: '/epanel_view4',
     name: 'Epanel_view4',
-    component: () => import(/* webpackChunkName: "epanel_view" */ '../views/EPanelView.vue'),
+    component: EPanelView,
     props: { panel_id: "panels/panel4" }
   },
   {
     path: '/epanel_view5',
     name: 'Epanel_view5',
-    component: () => import(/* webpackChunkName: "epanel_view" */ '../views/EPanelView.vue'),
-    props: { panel_id: "panels/panel5" }
+    component: () => import(/* webpackChunkName: "e3ddemo" */ '../views/E3dDemo.vue'),
   },
   {
     path: '/epanel_view6',
     name: 'Epanel_view6',
-    component: () => import(/* webpackChunkName: "epanel_view" */ '../views/EPanelView.vue'),
+    component: EPanelView,
     props: { panel_id: "panels/panel6" }
   },
   {
     path: '/epanel_view7',
     name: 'Epanel_view7',
-    component: () => import(/* webpackChunkName: "epanel_view" */ '../views/EPanelView.vue'),
+    component: EPanelView,
     props: { panel_id: "panels/panel7" }
   },
   {
     path: '/epanel_view8',
     name: 'Epanel_view8',
-    component: () => import(/* webpackChunkName: "epanel_view" */ '../views/EPanelView.vue'),
+    component: EPanelView,
     props: { panel_id: "panels/panel8" }
   },
 ]
