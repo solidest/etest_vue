@@ -81,8 +81,8 @@ function send_syslog(logs) {
 function _clear() {
     if (_timer) {
         clearInterval(_timer);
+        _timer = null;
     }
-    _timer = null;
     _db = null;
     _run_uuid = null;
 }
@@ -141,6 +141,7 @@ function _loaddb(run_id) {
 
 //停止执行
 function stop() {
+    demo.stop();
     if (_run_uuid) {
         _clear();
         send_sys_state('idle');
@@ -150,20 +151,18 @@ function stop() {
 //执行用例
 function run(_, run_id, params) {
 
-    if(demo[run_id]) {
-        return demo[run_id](params, send_records);
-    }
-
     if (_run_uuid) {
         return send_sys_err('ETest正在执行');
     }
-    _clear();
-    _db = _loaddb(run_id);
 
-    if (_db) {
-        _run_uuid = shortid.generate();
-        send_sys_state('running', _run_uuid);
+    _clear();
+    if(demo[run_id]) {
+        demo[run_id](params, send_records, stop);
+    } else {
+        _db = _loaddb(run_id);
     }
+    _run_uuid = shortid.generate();
+    send_sys_state('running', _run_uuid);
 }
 
 //查询状态
@@ -184,6 +183,11 @@ function setup(render) {
     state();
 }
 
+function release() {
+    stop();
+}
+
 module.exports = {
-    setup
+    setup,
+    release
 }

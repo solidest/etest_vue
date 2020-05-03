@@ -146,7 +146,10 @@
           return;
         }
         if (this.tab.id === 'exit') {
-          this.$store.commit('cmdExit');
+          this.$store.commit('cmdStop');
+          setTimeout(()=>{
+            this.$store.commit('cmdExit');
+          }, 500);
           return;
         }
 

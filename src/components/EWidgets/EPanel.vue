@@ -18,19 +18,21 @@
     import VueGridLayout from 'vue-grid-layout';
     export default {
         props: ['panel_id', 'config'],
+
         created: function() {
-            this.$store.commit('updatePanel', this.panel_id)
+            this.refresh(); //在子部件的mouted之前重置panel_id
         },
-        mounted: function() {
-            if(this.config.autorun) {
-                let self = this;
-                this.$store.commit('cmdStop');
-                
-                setTimeout(()=>{
-                    this.$store.commit('cmdRun', {panel_id: self.panel_id, run_id: self.config.autorun});
-                }, 300);
+
+        beforeDestroy: function() {
+            this.$store.commit('cmdStop');
+        },
+
+        watch: {
+            panel_id: function() {
+                this.refresh();
             }
         },
+
         components: {
             'GridLayout': VueGridLayout.GridLayout,
             'GridItem': VueGridLayout.GridItem,
@@ -38,6 +40,30 @@
             'e-lamp': () => import( /* webpackChunkName: "elamp" */ './ELamp'),
             'e-switch': () => import( /* webpackChunkName: "eswitch" */ './ESwitch'),
             'e-button': () => import( /* webpackChunkName: "eswitch" */ './EButton'),
+            'e-value-chart': () => import( /* webpackChunkName: "evaluechart" */ './EValueChart'),
+            'e-xy-chart': () => import( /* webpackChunkName: "exychart" */ './EXYChart'),
         },
+
+        methods: {
+            refresh: function() {
+                //console.log('reset')
+                this.$store.commit('cmdReset', this.panel_id);
+                if(this.config.autorun) {
+                    this.autoRun(this.panel_id, this.config.autorun);
+                }
+            },
+
+            autoRun: function(panel_id, run_id) {
+                let self = this;
+                setTimeout(()=>{
+                    //console.log('cmd', run_id)
+                    if(self.$store.state.work.run_state==='idle') {
+                        self.$store.commit('cmdRun', {panel_id: panel_id, run_id: run_id});
+                    } else {
+                        self.autoRun();
+                    }
+                }, 300);
+            }
+        }
     }
 </script>

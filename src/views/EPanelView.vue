@@ -1,7 +1,7 @@
 <template>
     <v-container fluid fill-height>
         <v-row>
-            <v-card outlined width="80%" height="800px" class="mx-auto pa-4" id="_sankey_">
+            <v-card flat width="90%" height="800px" class="mx-auto pa-4" id="_sankey_">
                 <epanel :panel_id="panel_id" :config="config" />
             </v-card>
         </v-row>

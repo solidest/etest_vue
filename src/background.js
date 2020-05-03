@@ -66,6 +66,7 @@ function createWindow() {
   });
 
   win.on('closed', () => {
+    sdk.release();
     win = null
   });
 }

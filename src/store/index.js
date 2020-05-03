@@ -25,6 +25,7 @@ const _store = new  Vuex.Store({
     },
     records: [],
     params: {},
+    resetting: false
   },
   mutations: {
     setMsgInfo: function (state, msg) {
@@ -50,22 +51,13 @@ const _store = new  Vuex.Store({
       state.params[pv.param] = pv.value;
     },
 
-    //切换到新的面板上
-    updatePanel: function(state, id) {
-      if(state.work.panel_id === id) {
-        return;
-      }
-      state.work.panel_id = id;
-      state.work.run_id = null;
-      state.work.run_logs = null;
-      state.work.last_result = null;
-      state.params = {};
-      state.records = [];
-    },
-
     //更新下位机工作状态
     updateWorkState: function (state, work) {
+      //console.log('state', work);
       state.work.run_state = work.run_state;
+      if(work.run_state==='idle') {
+        state.resetting = false;
+      }
       if(work.run_uuid){
         state.work.run_logs = new OutParser(work.run_uuid);
         state.work.last_result = null;
@@ -76,6 +68,9 @@ const _store = new  Vuex.Store({
 
     //更新下位机系统输出
     updateSyslog: function(state, log) {
+      if(state.resetting || state.work.run_state==='idle') {
+        return;
+      }
       let logs = state.work.run_logs;
       if(logs) {
         logs.pushLog(log);
@@ -84,21 +79,35 @@ const _store = new  Vuex.Store({
 
     //更新下位机上传记录
     updateRecord: function(state, rcds) {
-      let _rcds = state.records;
-      for(let r of rcds) {
-        _rcds.push(r);
+      if(state.resetting || state.work.run_state==='idle') {
+        //console.error('ignore updateRecord', JSON.stringify(rcds));
+        return;
       }
-      let rmc = _rcds.length-20000;  //最多保留20000条记录
+      //console.log('updateRecord', JSON.stringify(rcds));
+      state.records = state.records.concat(rcds);
+      let rmc = state.records.length-500;  //最多保留20000条记录
       if(rmc>0) {
-        while (rmc-- > 0) {
-          _rcds.shift();
-        }
+        state.records.splice(0, rmc);
+      }
+    },
+
+    //重置
+    cmdReset: function(state, panel_id) {
+      ipcRenderer.send('cmd-stop');
+      state.records.length = 0;
+      state.params = {};
+      state.work.panel_id = panel_id;
+      state.work.run_logs = null;
+      state.work.last_result = null;
+      state.work.run_id = null;
+      if(state.work.run_state!=='idle') {
+        state.resetting = true;
       }
     },
 
     //执行用例
     cmdRun: function(state, run_info) {
-      state.records = [];
+      state.records.length = 0;
       if(state.work.panel_id!==run_info.panel_id) {
         state.params = {};
         state.work.panel_id = run_info.panel_id;
@@ -140,9 +149,6 @@ const _store = new  Vuex.Store({
       let f = path.join(__static, 'config/' + id + '.yml');
       return yaml.safeLoad(fs.readFileSync(f, 'utf8'));
     },
-    lastRecord: state => {
-      return state.records.length===0 ? {} : state.records[state.records.length-1];
-    }
   },
   actions: {
   },

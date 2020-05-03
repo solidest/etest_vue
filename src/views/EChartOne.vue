@@ -30,6 +30,10 @@
 
             // 指定图表的配置项和数据
             myChart.setOption(this.$store.getters.getConfig(this.chart_key));
+
+            // let opt = 
+
+            // console.log(JSON.stringify(opt))
         },
 
     }

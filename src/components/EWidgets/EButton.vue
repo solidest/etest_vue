@@ -14,6 +14,9 @@
         props: ['panel_id', 'option'],
         methods: {
             onClick: function(i) {
+                if(this.$store.state.work.panel_id !== this.panel_id) {
+                    return {};
+                }
                 let opt = this.option[i];
                 if (opt.run_id) {
                     this.$store.commit('cmdRun', {

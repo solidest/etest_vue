@@ -1,22 +1,168 @@
 
+# debug: true
+autorun: demo2
 layout:
-    - {x: 0, y: 0, w: 2, h: 2, i: "0"}
-    - {x: 2, y: 0, w: 2,  h: 4, i: "1"}
-    - {x: 4, y: 0, w: 2, h: 5, i: "2"}
-    - {x: 6, y: 0, w: 2, h: 3, i: "3"}
-    - {x: 8, y: 0, w: 2, h: 3, i: "4"}
-    - {x: 10, y: 0, w: 2, h: 3, i: "5"}
-    - {x: 0, y: 5, w: 2, h: 5, i: "6"}
-    - {x: 2, y: 5, w: 2, h: 5, i: "7"}
-    - {x: 4, y: 5, w: 2, h: 5, i: "8"}
-    - {x: 6, y: 3, w: 2, h: 4, i: "9"}
-    - {x: 8, y: 4, w: 2, h: 4, i: "10"}
-    - {x: 10, y: 4, w: 2, h: 4, i: "11"}
-    - {x: 0, y: 10, w: 2, h: 5, i: "12"}
-    - {x: 2, y: 10, w: 2, h: 5, i: "13"}
-    - {x: 4, y: 8, w: 2, h: 4, i: "14"}
-    - {x: 6, y: 8, w: 2, h: 4, i: "15"}
-    - {x: 8, y: 10, w: 2, h: 5, i: "16"}
-    - {x: 10, y: 4, w: 2, h: 2, i: "17"}
-    - {x: 0, y: 9, w: 2, h: 3, i: "18"}
-    - {x: 2, y: 6, w: 2, h: 2, i: "19"}
+    - {x: 2, y: 0, w: 7, h: 36, i: "chart1"}
+chart1:
+    type: e-value-chart
+    option:
+          title:
+            text: 仪表盘
+            subtext: 动态监测多个数值
+            left: center
+          tooltip:
+            formatter: "{a} <br/>{c} {b}"
+          series:
+          - name: 速度
+            type: gauge
+            z: 3
+            min: 0
+            max: 220
+            splitNumber: 11
+            radius: 50%
+            axisLine:
+              lineStyle:
+                width: 10
+            axisTick:
+              length: 15
+              lineStyle:
+                color: auto
+            splitLine:
+              length: 20
+              lineStyle:
+                color: auto
+            axisLabel:
+              backgroundColor: auto
+              borderRadius: 2
+              color: "#eee"
+              padding: 3
+              textShadowBlur: 2
+              textShadowOffsetX: 1
+              textShadowOffsetY: 1
+              textShadowColor: "#222"
+            title:
+              fontWeight: bolder
+              fontSize: 20
+              fontStyle: italic
+            detail:
+              fontWeight: bolder
+              borderRadius: 3
+              backgroundColor: "#444"
+              borderColor: "#aaa"
+              shadowBlur: 5
+              shadowColor: "#333"
+              shadowOffsetX: 0
+              shadowOffsetY: 3
+              borderWidth: 2
+              textBorderColor: "#000"
+              textBorderWidth: 2
+              textShadowBlur: 2
+              textShadowColor: "#fff"
+              textShadowOffsetX: 0
+              textShadowOffsetY: 0
+              fontFamily: Arial
+              width: 100
+              color: "#eee"
+              rich: {}
+            data:
+            - value: 0
+              name: km/h
+              key: v_sd
+          - name: 转速
+            type: gauge
+            center:
+            - 20%
+            - 55%
+            radius: 35%
+            min: 0
+            max: 7
+            endAngle: 45
+            splitNumber: 7
+            axisLine:
+              lineStyle:
+                width: 8
+            axisTick:
+              length: 12
+              lineStyle:
+                color: auto
+            splitLine:
+              length: 20
+              lineStyle:
+                color: auto
+            pointer:
+              width: 5
+            title:
+              offsetCenter:
+              - 0
+              - "-30%"
+            detail:
+              fontWeight: bolder
+            data:
+            - name: x1000 r/min
+              key: v_zs
+              value: 0
+          - name: 油表
+            type: gauge
+            center:
+            - 77%
+            - 50%
+            radius: 25%
+            min: 0
+            max: 2
+            startAngle: 135
+            endAngle: 45
+            splitNumber: 2
+            axisLine:
+              lineStyle:
+                width: 8
+            axisTick:
+              splitNumber: 5
+              length: 10
+              lineStyle:
+                color: auto
+            axisLabel: {}
+            splitLine:
+              length: 15
+              lineStyle:
+                color: auto
+            pointer:
+              width: 2
+            title:
+              show: false
+            detail:
+              show: false
+            data:
+            - name: gas
+              key: v_yl
+              value: 0
+          - name: 水表
+            type: gauge
+            center:
+            - 77%
+            - 50%
+            radius: 25%
+            min: 0
+            max: 2
+            startAngle: 315
+            endAngle: 225
+            splitNumber: 2
+            axisLine:
+              lineStyle:
+                width: 8
+            axisTick:
+              show: false
+            axisLabel: {}
+            splitLine:
+              length: 15
+              lineStyle:
+                color: auto
+            pointer:
+              width: 2
+            title:
+              show: false
+            detail:
+              show: false
+            data:
+            - name: gas
+              key: v_sw
+              value: 0

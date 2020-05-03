@@ -21,26 +21,40 @@
         },
 
         created: function () {
-            if (!this.option || this.option.length === 0 || this.$store.state.work.panel_id !== this.panel_id) {
+            if (this.$store.state.work.panel_id !== this.panel_id) {
                 return;
             }
-            for (let i = 0; i < this.option.length; i++) {
-                let opt = this.option[i];
-                if (opt.default) {
-                    this.ons.push(i);
-                    if(opt.param) {
-                        this.$store.commit('setParam', {
-                            param: opt.param,
-                            value: true
-                        });
-                    }
-                }
+            this.initialData();
+        },
+
+        watch: {
+            panel_id: function() {
+                this.initialData();
             }
         },
 
         methods: {
 
+            initialData: function () {
+                this.ons.length = 0;
+                for (let i = 0; i < this.option.length; i++) {
+                    let opt = this.option[i];
+                    if (opt.default) {
+                        this.ons.push(i);
+                        if (opt.param) {
+                            this.$store.commit('setParam', {
+                                param: opt.param,
+                                value: true
+                            });
+                        }
+                    }
+                }
+            },
+
             onChange: function (i) {
+                if (this.$store.state.work.panel_id !== this.panel_id) {
+                    return;
+                }
                 let opt = this.option[i];
                 if (opt.param) {
                     this.$store.commit('setParam', {
