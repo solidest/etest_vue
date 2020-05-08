@@ -195,153 +195,65 @@ items2:
       name: TFT04A
       catalog: car
   
-items1:
+items3:
 - id: xl
   name: 某旅
   children:
   - id: 96a
-    name: 96A式坦克
+    name: 一营
     children:
     - id: 96a-1
       name: MBL-001
-      children:
-      - id: 96a-1-mh
-        name: 灭火系统
-      - id: 96a-1-sf
-        name: 三防系统
-      - id: 96a-1-zd
-        name: 综电系统
     - id: 96a-2
       name: MBL-002
-      children:
-      - id: 96a-2-mh
-        name: 灭火系统
-      - id: 96a-2-sf
-        name: 三防系统
-      - id: 96a-2-zd
-        name: 综电系统
     - id: 96a-3
       name: MBL-003
-      children:
-      - id: 96a-3-mh
-        name: 灭火系统
-      - id: 96a-3-sf
-        name: 三防系统
-      - id: 96a-3-zd
-        name: 综电系统
     - id: 96a-4
       name: MBL-004
-      children:
-      - id: 96a-4-mh
-        name: 灭火系统
-      - id: 96a-4-sf
-        name: 三防系统
-      - id: 96a-4-zd
-        name: 综电系统
     - id: 96a-5
       name: MBL-005
-      children:
-      - id: 96a-5-mh
-        name: 灭火系统
-      - id: 96a-5-sf
-        name: 三防系统
-      - id: 96a-5-zd
-        name: 综电系统
-    
   - id: 99a
-    name: 99A式坦克
+    name: 二营
     children:
     - id: 99a-1
       name: MBL-006
-      children:
-      - id: 99a-1-mh
-        name: 灭火系统
-      - id: 99a-1-sf
-        name: 三防系统
-      - id: 99a-1-zd
-        name: 综电系统
     - id: 99a-2
       name: MBL-007
-      children:
-      - id: 99a-2-mh
-        name: 灭火系统
-      - id: 99a-2-sf
-        name: 三防系统
-      - id: 99a-2-zd
-        name: 综电系统
     - id: 99a-3
       name: MBL-008
-      children:
-      - id: 99a-3-mh
-        name: 灭火系统
-      - id: 99a-3-sf
-        name: 三防系统
-      - id: 99a-3-zd
-        name: 综电系统
     - id: 99a-4
       name: MBL-009
-      children:
-      - id: 99a-4-mh
-        name: 灭火系统
-      - id: 99a-4-sf
-        name: 三防系统
-      - id: 99a-4-zd
-        name: 综电系统
     - id: 99a-5
       name: MBL-010
-      children:
-      - id: 99a-5-mh
-        name: 灭火系统
-      - id: 99a-5-sf
-        name: 三防系统
-      - id: 99a-5-zd
-        name: 综电系统
-
   - id: t72
-    name: T72式坦克
+    name: 三营
     children:
     - id: t72-1
       name: MBL-011
-      children:
-      - id: t72-1-mh
-        name: 灭火系统
-      - id: t72-1-sf
-        name: 三防系统
-      - id: t72-1-zd
-        name: 综电系统
     - id: t72-2
       name: MBL-012
-      children:
-      - id: t72-2-mh
-        name: 灭火系统
-      - id: t72-2-sf
-        name: 三防系统
-      - id: t72-2-zd
-        name: 综电系统
     - id: t72-3
       name: MBL-013
-      children:
-      - id: t72-3-mh
-        name: 灭火系统
-      - id: t72-3-sf
-        name: 三防系统
-      - id: t72-3-zd
-        name: 综电系统
     - id: t72-4
       name: MBL-014
-      children:
-      - id: t72-4-mh
-        name: 灭火系统
-      - id: t72-4-sf
-        name: 三防系统
-      - id: t72-4-zd
-        name: 综电系统
     - id: t72-5
       name: MBL-015
-      children:
-      - id: t72-5-mh
-        name: 灭火系统
-      - id: t72-5-sf
-        name: 三防系统
-      - id: t72-5-zd
-        name: 综电系统
+    - id: 99a-2
+      name: MBL-007
+    - id: 99a-3
+      name: MBL-008
+    - id: 99a-4
+      name: MBL-009
+    - id: 99a-5
+      name: MBL-010
+  - id: t72
+    name: 四营
+    children:
+    - id: t72-1
+      name: MBL-011
+    - id: t72-2
+      name: MBL-012
+    - id: t72-4
+      name: MBL-014
+    - id: t72-5
+      name: MBL-015

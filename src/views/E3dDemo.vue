@@ -3,7 +3,7 @@
         <v-row>
             <!-- <div style="width: 500px; height: 460px;" id="_sankey_" /> -->
 
-            <v-card outlined width="80%" height="800px" class="mx-auto pa-4" id="_sankey_">
+            <v-card outlined width="90%" height="800px" class="mx-auto pa-4" id="_sankey_">
             </v-card>
         </v-row>
     </v-container>
@@ -24,28 +24,28 @@
             let option = {
                 tooltip: {},
                 grid3D: {
-                    width: '50%'
+                    width: '55%'
                 },
                 xAxis3D: {},
                 yAxis3D: {},
                 zAxis3D: {},
                 grid: [{
-                        left: '50%',
+                        left: '55%',
                         width: '20%',
                         bottom: sizeValue
                     },
                     {
-                        left: '75%',
+                        left: '80%',
                         width: '20%',
                         bottom: sizeValue
                     },
                     {
-                        left: '50%',
+                        left: '55%',
                         width: '20%',
                         top: sizeValue
                     },
                     {
-                        left: '75%',
+                        left: '80%',
                         width: '20%',
                         top: sizeValue
                     }
@@ -53,7 +53,7 @@
                 xAxis: [{
                         type: 'value',
                         gridIndex: 0,
-                        name: 'Income',
+                        name: '参数1',
                         axisLabel: {
                             rotate: 50,
                             interval: 0
@@ -62,7 +62,7 @@
                     {
                         type: 'category',
                         gridIndex: 1,
-                        name: 'Country',
+                        name: '参数4',
                         boundaryGap: false,
                         axisLabel: {
                             rotate: 50,
@@ -72,7 +72,7 @@
                     {
                         type: 'value',
                         gridIndex: 2,
-                        name: 'Income',
+                        name: '参数1',
                         axisLabel: {
                             rotate: 50,
                             interval: 0
@@ -81,7 +81,7 @@
                     {
                         type: 'value',
                         gridIndex: 3,
-                        name: 'Life Expectancy',
+                        name: '参数2',
                         axisLabel: {
                             rotate: 50,
                             interval: 0
@@ -91,32 +91,32 @@
                 yAxis: [{
                         type: 'value',
                         gridIndex: 0,
-                        name: 'Life Expectancy'
+                        name: '参数2'
                     },
                     {
                         type: 'value',
                         gridIndex: 1,
-                        name: 'Income'
+                        name: '参数1'
                     },
                     {
                         type: 'value',
                         gridIndex: 2,
-                        name: 'Population'
+                        name: '参数3'
                     },
                     {
                         type: 'value',
                         gridIndex: 3,
-                        name: 'Population'
+                        name: '参数3'
                     }
                 ],
                 dataset: {
                     dimensions: [
-                        'Income',
-                        'Life Expectancy',
-                        'Population',
-                        'Country',
+                        '参数1',
+                        '参数2',
+                        '参数3',
+                        '参数4',
                         {
-                            name: 'Year',
+                            name: '参数5',
                             type: 'ordinal'
                         }
                     ],
@@ -126,9 +126,9 @@
                         type: 'scatter3D',
                         symbolSize: 3,
                         encode: {
-                            x: 'Population',
-                            y: 'Life Expectancy',
-                            z: 'Income',
+                            x: '参数3',
+                            y: '参数2',
+                            z: '参数1',
                             tooltip: [0, 1, 2, 3, 4]
                         }
                     },
@@ -139,8 +139,8 @@
                         xAxisIndex: 0,
                         yAxisIndex: 0,
                         encode: {
-                            x: 'Income',
-                            y: 'Life Expectancy',
+                            x: '参数1',
+                            y: '参数2',
                             tooltip: [0, 1, 2, 3, 4]
                         }
                     },
@@ -150,8 +150,8 @@
                         xAxisIndex: 1,
                         yAxisIndex: 1,
                         encode: {
-                            x: 'Country',
-                            y: 'Income',
+                            x: '参数4',
+                            y: '参数1',
                             tooltip: [0, 1, 2, 3, 4]
                         }
                     },
@@ -161,8 +161,8 @@
                         xAxisIndex: 2,
                         yAxisIndex: 2,
                         encode: {
-                            x: 'Income',
-                            y: 'Population',
+                            x: '参数1',
+                            y: '参数3',
                             tooltip: [0, 1, 2, 3, 4]
                         }
                     },
@@ -172,8 +172,8 @@
                         xAxisIndex: 3,
                         yAxisIndex: 3,
                         encode: {
-                            x: 'Life Expectancy',
-                            y: 'Population',
+                            x: '参数2',
+                            y: '参数3',
                             tooltip: [0, 1, 2, 3, 4]
                         }
                     }

@@ -7,7 +7,7 @@
                 {{ open ? 'mdi-folder-open' : 'mdi-folder' }}
             </v-icon>
             <v-icon v-else>
-                mdi-flag-checkered
+                mdi-car
             </v-icon>
         </template>
     </v-treeview>

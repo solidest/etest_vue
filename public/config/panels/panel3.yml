@@ -10,7 +10,7 @@ chart1:
     type: e-xy-chart
     option:
         maxCount: 2000
-        redrawTime: 210
+        redrawTime: 100
         title:
             text: 波形图
             left: center

@@ -5,7 +5,7 @@
     </v-navigation-drawer>
 
     <v-navigation-drawer absolute permanent right width="380px">
-      <tree-simple :config="{items: cfg.items1, icons: cfg.icons}" />
+      <tree-simple :config="{items: cfg.items3, icons: cfg.icons}" />
     </v-navigation-drawer>
   </v-container>
 </template>
