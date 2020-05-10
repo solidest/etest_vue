@@ -3,7 +3,7 @@
 icons:
   bz: mdi-human-male-male
   car: mdi-car-pickup
-
+  device: mdi-network
 
 items2:
 - id: pb
@@ -19,241 +19,25 @@ items2:
     - id: pb_89a_zsd89a
       name: ZSD89A
       catalog: car
-    - id: pb_89a_zfg89a
-      name: ZFG99A
-      catalog: car
-    - id: pb_89a_tt89a
-      name: TFT89A
-      catalog: car
-  - id: pb_99a
-    name: 99A
-    catalog: dp
-    kind: 99a
-    children:
-    - id: pb_99a_zsd99a
-      name: ZSD99A
-      catalog: car
-    - id: pb_99a_zfg99a
-      name: ZFG99A
-      catalog: car
-    - id: pb_99a_tt99a
-      name: TFT99A
-      catalog: car
-  - id: pb_04a
-    name: 04A
-    catalog: dp
-    kind: 04a
-    children:
-    - id: pb_04a_zsd04a
-      name: ZSD04A
-      catalog: car
-    - id: pb_04a_zfg04a
-      name: ZFG04A
-      catalog: car
-    - id: pb_04a_tt04a
-      name: TFT04A
-      catalog: car
-- id: gcb
-  name: 工程兵
-  catalog: bz
-  kind: gcb
-  children:
-  - id: gcb_89a
-    name: 89A
-    catalog: dp
-    kind: 89a
-    children:
-    - id: gcb_89a_zsd89a
-      name: ZSD89A
-      catalog: car
-    - id: gcb_89a_zfg89a
-      name: ZFG99A
-      catalog: car
-    - id: gcb_89a_tt89a
-      name: TFT89A
-      catalog: car
-  - id: gcb_99a
-    name: 99A
-    catalog: dp
-    kind: 99a
-    children:
-    - id: gcb_99a_zsd99a
-      name: ZSD99A
-      catalog: car
-    - id: gcb_99a_zfg99a
-      name: ZFG99A
-      catalog: car
-    - id: gcb_99a_tt99a
-      catalog: car
-      name: TFT99A
-  - id: gcb_04a
-    name: 04A
-    catalog: dp
-    kind: 04a
-    children:
-    - id: gcb_04a_zsd04a
-      name: ZSD04A
-      catalog: car
-    - id: gcb_04a_zfg04a
-      name: ZFG04A
-      catalog: car
-    - id: gcb_04a_tt04a
-      catalog: car
-      name: TFT04A
-- id: zjb
-  name: 装甲兵
-  catalog: bz
-  kind: zjb
-  children:
-  - id: zjb_89a
-    name: 89A
-    catalog: dp
-    kind: 89a
-    children:
-    - id: zjb_89a_zsd89a
-      name: ZSD89A
-      catalog: car
-    - id: zjb_89a_zfg89a
-      name: ZFG99A
-      catalog: car
-    - id: zjb_89a_tt89a
-      catalog: car
-      name: TFT89A
-  - id: zjb_99a
-    name: 99A
-    catalog: dp
-    kind: 99a
-    children:
-    - id: zjb_99a_zsd99a
-      name: ZSD99A
-      catalog: car
-    - id: zjb_99a_zfg99a
-      name: ZFG99A
-      catalog: car
-    - id: zjb_99a_tt99a
-      name: TFT99A
-      catalog: car
-  - id: zjb_04a
-    name: 04A
-    catalog: dp
-    kind: 04a
-    children:
-    - id: zjb_04a_zsd04a
-      name: ZSD04A
-      catalog: car
-    - id: zjb_04a_zfg04a
-      name: ZFG04A
-      catalog: car
-    - id: zjb_04a_tt04a
-      name: TFT04A
-      catalog: car
-- id: fhb
-  name: 防化兵
-  catalog: bz
-  kind: fhb
-  children:
-  - id: fhb_89a
-    name: 89A
-    catalog: dp
-    kind: 89a
-    children:
-    - id: fhb_89a_zsd89a
-      name: ZSD89A
-      catalog: car
-    - id: fhb_89a_zfg89a
-      name: ZFG99A
-      catalog: car
-    - id: fhb_89a_tt89a
-      name: TFT89A
-      catalog: car
-  - id: fhb_99a
-    name: 99A
-    catalog: dp
-    kind: 99a
-    children:
-    - id: fhb_99a_zsd99a
-      name: ZSD99A
-      catalog: car
-    - id: fhb_99a_zfg99a
-      name: ZFG99A
-      catalog: car
-    - id: fhb_99a_tt99a
-      name: TFT99A
-      catalog: car
-  - id: fhb_04a
-    name: 04A
-    catalog: dp
-    kind: 04a
-    children:
-    - id: fhb_04a_zsd04a
-      name: ZSD04A
-      catalog: car
-    - id: fhb_04a_zfg04a
-      name: ZFG04A
-      catalog: car
-    - id: fhb_04a_tt04a
-      name: TFT04A
-      catalog: car
-  
-items3:
-- id: xl
-  name: 某旅
-  children:
-  - id: 96a
-    name: 一营
-    children:
-    - id: 96a-1
-      name: MBL-001
-    - id: 96a-2
-      name: MBL-002
-    - id: 96a-3
-      name: MBL-003
-    - id: 96a-4
-      name: MBL-004
-    - id: 96a-5
-      name: MBL-005
-  - id: 99a
-    name: 二营
-    children:
-    - id: 99a-1
-      name: MBL-006
-    - id: 99a-2
-      name: MBL-007
-    - id: 99a-3
-      name: MBL-008
-    - id: 99a-4
-      name: MBL-009
-    - id: 99a-5
-      name: MBL-010
-  - id: t72
-    name: 三营
-    children:
-    - id: t72-1
-      name: MBL-011
-    - id: t72-2
-      name: MBL-012
-    - id: t72-3
-      name: MBL-013
-    - id: t72-4
-      name: MBL-014
-    - id: t72-5
-      name: MBL-015
-    - id: 99a-2
-      name: MBL-007
-    - id: 99a-3
-      name: MBL-008
-    - id: 99a-4
-      name: MBL-009
-    - id: 99a-5
-      name: MBL-010
-  - id: t72
-    name: 四营
-    children:
-    - id: t72-1
-      name: MBL-011
-    - id: t72-2
-      name: MBL-012
-    - id: t72-4
-      name: MBL-014
-    - id: t72-5
-      name: MBL-015
+      children:
+      - id: x4
+        name: 灭火系统
+        children:
+        - id: xx1
+          catalog: device
+          name: 灭火盒
+        - id: xx2
+          catalog: device
+          name: 灭火瓶
+        - id: xx3
+          catalog: device
+          name: 火警传感器
+      - id: x5
+        name: 三防系统
+        children:
+        - 
+      - id: x6
+        name: 烟幕弹/榴霰弹控制系统
+        children:
+        - 
+     

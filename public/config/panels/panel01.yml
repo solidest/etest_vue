@@ -1,0 +1,58 @@
+
+# debug: true
+autorun: demo1
+layout:
+- {x: 1, y: 0, w: 10, h: 5, i: "buttons"}
+- {x: 0, y: 5, w: 12, h: 20, i: "chart"}
+
+chart:
+  type: e-xy-chart
+  option:
+    maxCount: 20
+    redrawTime: 510
+    title:
+        text: 
+        left: center
+    tooltip:
+        trigger: axis
+        axisPointer:
+            animation: false
+    xAxis:
+        type: value
+        min: dataMin
+        max: dataMax
+        splitLine:
+            show: false
+    yAxis:
+        type: value
+        splitLine:
+            show: false
+    series:
+    -   name: 模拟数据
+        type: line
+        showSymbol: false
+        hoverAnimation: false
+        encode:
+            x: $time
+            y: v1
+    
+buttons:
+  type: e-button
+  option:
+  - name: 保存维修记录
+    large: true
+    color: primary
+  - name: 操作02
+    large: true
+    color: primary
+  - name: 操作03
+    large: true
+    color: primary
+  - name: 操作04
+    large: true
+    color: primary
+  - name: 操作05
+    large: true
+
+  
+  

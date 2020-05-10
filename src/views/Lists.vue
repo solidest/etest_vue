@@ -1,5 +1,10 @@
 <template>
     <v-container fluid fill-height>
+        <v-breadcrumbs :items="catalogs">
+            <template v-slot:divider>
+                <v-icon>mdi-chevron-right</v-icon>
+            </template>
+        </v-breadcrumbs>
         <v-row>
             <v-col cols="1" />
             <v-col cols="5">
@@ -49,11 +54,43 @@
     export default {
         created: function () {
             this.items = this.$store.getters.getConfig('lists');
+
         },
 
         data: () => {
             return {
-                items: []
+                items: [],
+                catalogs: [{
+                        text: '炮兵',
+                        disabled: false,
+                        href: 'breadcrumbs_dashboard',
+                    },
+                    {
+                        text: '89A',
+                        disabled: false,
+                        href: 'breadcrumbs_link_1',
+                    },
+                    {
+                        text: 'ZSD89A',
+                        disabled: false,
+                        href: 'breadcrumbs_link_2',
+                    },
+                    {
+                        text: '灭火系统',
+                        disabled: false,
+                        href: 'breadcrumbs_link_2',
+                    },
+                    {
+                        text: '灭火盒',
+                        disabled: false,
+                        href: 'breadcrumbs_link_2',
+                    },
+                    {
+                        text: 'XXX型号',
+                        disabled: false,
+                        href: 'breadcrumbs_link_2',
+                    },
+                ],
             }
         }
 

@@ -15,6 +15,36 @@ Vue.use(VueRouter)
     component: Home
   },
   {
+    path: '/custom1',
+    name: 'custom1',
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () => import(/* webpackChunkName: "about" */ '../views/EDialog.vue')
+  },
+  {
+    path: '/custom2',
+    name: 'custom2',
+    component: EPanelView,
+    props: { panel_id: "panels/panel01" }
+  },
+  {
+    path: '/custom3',
+    name: 'custom3',
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () => import(/* webpackChunkName: "about" */ '../views/custom/EDialog1.vue')
+  },
+  {
+    path: '/custom4',
+    name: 'custom4',
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () => import(/* webpackChunkName: "about" */ '../views/custom/ETable1.vue')
+  },
+  {
     path: '/tree',
     name: 'Tree',
     // route level code-splitting
@@ -22,6 +52,7 @@ Vue.use(VueRouter)
     // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "about" */ '../views/Tree.vue')
   },
+
   {
     path: '/lists',
     name: 'Lists',
