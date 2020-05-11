@@ -8,7 +8,7 @@
     import SimpleKeyboard from "../components/SimpleKeyboard";
 
     export default {
-        name: "App",
+
         components: {
             SimpleKeyboard
         },
