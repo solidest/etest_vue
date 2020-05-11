@@ -21,6 +21,7 @@
     "js-yaml": "^3.13.1",
     "lokijs": "^1.5.8",
     "shortid": "^2.2.15",
+    "simple-keyboard": "^2.29.21",
     "throttle-debounce": "^2.1.0",
     "vue": "^2.6.11",
     "vue-form-generator": "^2.3.4",

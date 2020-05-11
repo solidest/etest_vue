@@ -53,6 +53,11 @@ Vue.use(VueRouter)
     component: () => import(/* webpackChunkName: "inputform" */ '../views/InputForm.vue')
   },
   {
+    path: '/virutalkeyboard',
+    name: 'Virutalkeyboard',
+    component: () => import(/* webpackChunkName: "inputform" */ '../views/VirutalKeyboard.vue')
+  },
+  {
     path: '/diagnosis_all',
     name: 'DiagnosisAll',
     component: ESankey,

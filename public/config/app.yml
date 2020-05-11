@@ -1,39 +1,132 @@
 tabs:
-- title: 首页
-  id: home
-  icon: mdi-home
-  readme: 首页，启动后自动自检
-  router: 
-- title: 装备检测
+- title: ETest
   id: about
-  icon: mdi-checkbox-multiple-marked-circle-outline
+  icon: mdi-home
   readme: ETestVue是ETestDev的UI组件库
-  router: Tree
-- title: 故障诊断
+  router: Home
+- title: 目录树
   id: tree
-  icon: mdi-car-tire-alert
+  icon: mdi-file-tree
   readme: 树结构组件：用于绑定树形结构数据的UI组件
-  router: Runsingle
-- title: 维修日志
-  id: runcase
-  icon: mdi-comment-edit-outline
-  readme: 用例执行组件：包含执行控制按钮、执行输出两个独立的组件
-  router: Lists
-- title: 技术资料
-  id: watcher
-  icon: mdi-book-open-outline
-  readme: 实时监视组件：用于实时监视用例执行状态数据，可任意组合搭配使用
-  router: MultiTree
-- title: 装备履历
-  id: analysis
-  icon: mdi-car-info
-  readme: 数据分析组件：用于对采集数据进行穿透查询或数据分析
-  router: Report
-- title: 系统信息
+  router: Tree
+- title: 选择列表
   id: lists
-  icon: mdi-cog-outline
+  icon: mdi-format-list-bulleted
   readme: 选择列表组件：用于从多项内容中选择
+  router: Lists
+- title: 用例执行
+  id: runcase
+  icon: mdi-play-box-outline
+  readme: 用例执行组件：包含执行控制按钮、执行输出两个独立的组件
+  router: Runsingle
+- title: 实时监控
+  id: watcher
+  icon: mdi-chart-bell-curve
+  readme: 实时监控组件：用于实时监控用例执行状态，可任意组合搭配使用
+  children:
+  - id: panel1
+    name: 开关、状态指示、按钮
+    router: Epanel_view1
+  - id: panel2
+    name: 仪表盘
+    router: Epanel_view2
+  - id: panel3
+    name: 线条
+    router: Epanel_view3
+  - id: panel4
+    name: 散点
+    router: Epanel_view4
+  - id: panel5
+    name: 三维坐标
+    router: Epanel_view5
+  # - id: panel6
+  #   name: 正弦波
+  #   router: Epanel_view6
+  # - id: pael7
+  #   name: 方波
+  #   router: Epanel_view7
+  # - id: panel8
+  #   name: 组合示例
+  #   router: Epanel_view8
+- title: 数据分析
+  id: analysis
+  icon: mdi-function-variant
+  readme: 数据分析组件：用于对采集数据进行穿透查询或数据分析
+  children:
+  - id: analysis_base
+    name: 基本统计
+    router: Analysis_base
+  - id: zoom_data
+    name: 数据缩放
+    router: Zoom_data
+  - id: analysis_histogram
+    name: 分布直方图
+    router: Analysis_histogram
+  - id: analysis_clustering
+    name: 聚类分析
+    router: Analysis_clustering
+  - id: analysis_regression1
+    name: 线性回归
+    router: Analysis_regression1
+  - id: analysis_regression2
+    name: 指数回归
+    router: Analysis_regression2
+  - id: analysis_regression3
+    name: 对数回归
+    router: Analysis_regression3
+  - id: analysis_regression4
+    name: 多项式回归
+    router: Analysis_regression4
+- title: 故障诊断
+  id: diagnosis
+  icon: mdi-cloud-search-outline
+  readme: 故障诊断组件：最左端为故障现象顶事件，最右端为故障原因底事件，通过绑定测试程序实现自动诊断
+  children:
+  - id: diagnosis_all
+    name: 全部诊断模型
+    router: DiagnosisAll
+  - id: diagnosis_1
+    name: 故障1诊断模型
+    router: Diagnosis2
+  - id: diagnosis_2
+    name: 故障2诊断模型
+    router: Diagnosis3
+  - id: diagnosis_3
+    name: 故障3诊断模型
+    router: Diagnosis4
+  - id: diagnosis_4
+    name: demo
+    router: Diagnosis1
+- title: 输入组件
+  id: inputform
+  icon: mdi-form-select
+  readme: 输入组件：用户交互输入组件
+  children:
+  - id: inputform
+    name: 动态表单
+    router: InputForm
+  - id: virutalkeyboard
+    name: 虚拟键盘
+    router: Virutalkeyboard
+- title: 批量执行
+  id: multirun
+  icon: mdi-animation-play-outline
+  readme: 批量执行组件：用于任意选择多个用例，然后批量自动执行
+  router: MultiTree
+- title: 执行报告
+  id: report
+  icon: mdi-clipboard-play-outline
+  readme: 执行报告组件：用例执行统计报表
+  router: Report
+- title: 图标库
+  id: icons
+  icon: mdi-flower
+  readme: ETestVue内置的图标库
   router: Icons
+- title: 开发手册
+  id: help
+  icon: mdi-book-open-outline
+  readme: 开发帮助手册
 - title: 退出
   id: exit
   icon: mdi-exit-run

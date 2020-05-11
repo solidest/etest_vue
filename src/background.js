@@ -30,10 +30,10 @@ function createWindow() {
     webPreferences: {
       nodeIntegration: true
     },
-    //simpleFullscreen: true,
-    // fullscreen: true,
-    width: 1024,
-    height: 768,
+    simpleFullscreen: true,
+    fullscreen: true,
+    // width: 1024,
+    // height: 768,
     show: false,
     frame: false,
   });
